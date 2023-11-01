@@ -18,3 +18,30 @@ type Monster = {
 		magic: { strength: number; accuracy: number; defence: number };
 	};
 };
+
+interface UserStats {
+	selectedAttackStyle: string;
+	skills: {
+		attack: number;
+		strength: number;
+		defence: number;
+		archery: number;
+		magic: number;
+	};
+	// stats
+	melee: {
+		strength: number;
+		accuracy: number;
+		defence: number;
+	};
+	archery: {
+		strength: number;
+		accuracy: number;
+		defence: number;
+	};
+	magic: {
+		strength: number;
+		accuracy: number;
+		defence: number;
+	};
+}

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { userStats } from '$lib/userStats';
+	import userStats from '$lib/userStats';
 </script>
 
 <div class="userStats">

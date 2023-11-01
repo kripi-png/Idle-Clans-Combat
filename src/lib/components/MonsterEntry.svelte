@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { userStats } from '$lib/userStats';
+	import userStats, { calculateUserAugmentedAccuracy } from '$lib/userStats';
 	export let monster: Monster;
 
 	// stat is accuracy or defence value; level is the actual level
@@ -14,13 +14,8 @@
 		monster.skill_levels.defence
 	);
 
-	$: playerAttackStyle = $userStats.selectedAttackStyle;
-	$: isUserUsingMelee = playerAttackStyle === 'melee';
-	$: playerAccuracy = $userStats[playerAttackStyle]?.accuracy;
-	$: playerSkillLevel = $userStats.skills[isUserUsingMelee ? 'attack' : playerAttackStyle];
-	//
-	$: playerAugmentedAccuracy = calculateAugmentedStat(playerAccuracy, playerSkillLevel);
-	//
+	$: playerAugmentedAccuracy = calculateUserAugmentedAccuracy($userStats);
+
 	let playerHitChance = 0;
 	$: {
 		if (playerAugmentedAccuracy < monsterAugmentedDefence) {
@@ -39,6 +34,6 @@
 	<td>{monster.attack_style}</td>
 	<td>{monster.attack_style_weakness}</td>
 	--------
-	<td>{playerHitChance * 100}</td>
+	<td>{(playerHitChance * 100).toFixed(1)}</td>
 	<td>monster chance</td>
 </tr>
