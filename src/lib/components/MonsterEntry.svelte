@@ -27,16 +27,26 @@
 	// so e.g. first row monster always has Turkey's hit chances and so on
 	$: monster.hitChance = calculateHitChance(augmentedAccuracy, playerDefenceAugmented);
 	$: monster.chanceToGetHit = calculateHitChance(playerAccuracyAugmented, augmentedDefence);
+
+	let isDetailed = false;
 </script>
 
-<tr>
+<tr
+	on:click={() => {
+		isDetailed = !isDetailed;
+	}}
+>
 	<td>{monster.name}</td>
 	<td>{monster.combat_level}</td>
 	<td>{monster.health}</td>
-	<td>{monster.attack_interval}</td>
-	<td>{monster.attack_style}</td>
-	<td>{monster.attack_style_weakness}</td>
 	--------
 	<td>{((monster.chanceToGetHit || 0) * 100).toFixed(1)}</td>
 	<td>{((monster.hitChance || 0) * 100).toFixed(1)}</td>
 </tr>
+{#if isDetailed}
+	<ul>
+		<li>Attack Interval: {monster.attack_interval}</li>
+		<li>Attack Style: {monster.attack_style}</li>
+		<li>Attack Style Weakness: {monster.attack_style_weakness}</li>
+	</ul>
+{/if}

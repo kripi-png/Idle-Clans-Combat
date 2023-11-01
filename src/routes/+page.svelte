@@ -20,20 +20,17 @@
 		Search
 		<input type="text" bind:value={searchQuery} />
 	</label>
-	<br />
-	<span class="warning"
-		>NOTE: Do not blindly trust these values. They are probably not 100% accurate (as of yet),
-		consider them something of approximation.</span
-	>
+	<p class="warning">
+		NOTE: Do not blindly trust these values. They are probably not 100% accurate (as of yet),
+		consider them something of approximation.
+	</p>
+	<p class="note">Click on a monster to display more details</p>
 	<table>
 		<thead>
 			<tr>
 				<th>Name</th>
 				<th>Combat Level</th>
 				<th>Health</th>
-				<th>Attack Interval</th>
-				<th>Attack Style</th>
-				<th>Attack Style Weakness</th>
 				--------
 				<th>Player Hit Chance</th>
 				<th>Monster Hit Chance</th>
@@ -57,6 +54,9 @@
 <style>
 	.warning {
 		color: red;
+	}
+	.note {
+		color: blue;
 	}
 	.monsterTable {
 		margin-top: 2em;
