@@ -65,36 +65,58 @@
 		<h2>Skill Levels</h2>
 		<label>
 			Attack
-			<br>
+			<br />
 			<input type="number" bind:value={$userStats.skills.attack} />
 		</label>
 		<label>
 			Strength
-			<br>
+			<br />
 			<input type="number" bind:value={$userStats.skills.strength} />
 		</label>
 		<label>
 			Defence
-			<br>
+			<br />
 			<input type="number" bind:value={$userStats.skills.defence} />
 		</label>
 		<label>
 			Archery
-			<br>
+			<br />
 			<input type="number" bind:value={$userStats.skills.archery} />
 		</label>
 		<label>
 			Magic
-			<br>
+			<br />
 			<input type="number" bind:value={$userStats.skills.magic} />
 		</label>
 	</div>
+</div>
+<div class="attackStyles" role="radiogroup">
+	<label>
+		Melee
+		<br />
+		<input type="radio" value="melee" bind:group={$userStats.selectedAttackStyle} />
+	</label>
+	<label>
+		Archery
+		<br />
+		<input type="radio" value="archery" bind:group={$userStats.selectedAttackStyle} />
+	</label>
+	<label>
+		Magic
+		<br />
+		<input type="radio" value="magic" bind:group={$userStats.selectedAttackStyle} />
+	</label>
 </div>
 
 <style>
 	h2 {
 		margin: 0;
 		padding: 0;
+	}
+	.attackStyles {
+		display: flex;
+		flex-direction: row;
+		gap: 0.5em;
 	}
 	.userStats {
 		display: flex;
