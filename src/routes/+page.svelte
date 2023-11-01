@@ -15,7 +15,11 @@
 		Search
 		<input type="text" bind:value={searchQuery} />
 	</label>
-
+	<br />
+	<span class="warning"
+		>NOTE: Do not blindly trust these values. They are probably not 100% accurate (as of yet),
+		consider them something of approximation.</span
+	>
 	<table>
 		<thead>
 			<tr>
@@ -41,6 +45,9 @@
 </div>
 
 <style>
+	.warning {
+		color: red;
+	}
 	.monsterTable {
 		margin-top: 2em;
 	}

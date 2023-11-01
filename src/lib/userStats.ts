@@ -61,15 +61,16 @@ export const calculateUserAugmentedAccuracy = (stats: UserStats): number => {
 	);
 };
 
-export const calculateUserAugmentedDefence = (monsterAttackStyle: null | string, stats: UserStats): number => {
-	if (!monsterAttackStyle) monsterAttackStyle = "melee";
+export const calculateUserAugmentedDefence = (
+	monsterAttackStyle: null | string,
+	stats: UserStats
+): number => {
+	if (!monsterAttackStyle) monsterAttackStyle = 'melee';
 	// use defence against monster's attack style
 	const defenceStat = (stats as any)[monsterAttackStyle].defence;
 	const defenceLevel = stats.skills.defence;
 
-	return Math.floor(
-		((defenceStat + 64) * (defenceLevel + 8)) / 10
-	);
+	return Math.floor(((defenceStat + 64) * (defenceLevel + 8)) / 10);
 };
 
 // const monsterAugmentedDefence = calculateAugmentedStat(

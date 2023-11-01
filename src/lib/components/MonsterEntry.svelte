@@ -18,7 +18,7 @@
 		monster.skill_levels.defence
 	);
 	const monsterAugmentedAccuracy = calculateAugmentedStat(
-		(monster.combat_stats as any)[monster.attack_style ? monster.attack_style : "melee"].accuracy,
+		(monster.combat_stats as any)[monster.attack_style ? monster.attack_style : 'melee'].accuracy,
 		monster.skill_levels.rigour
 	);
 
