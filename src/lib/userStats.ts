@@ -60,3 +60,20 @@ export const calculateUserAugmentedAccuracy = (stats: UserStats): number => {
 		((accuracyInSelectedAttackStyle + 64) * (skillLevelForSelectedAttackStyle + 8)) / 10
 	);
 };
+
+export const calculateUserAugmentedDefence = (monsterAttackStyle: null | string, stats: UserStats): number => {
+	if (!monsterAttackStyle) monsterAttackStyle = "melee";
+	// use defence against monster's attack style
+	const defenceStat = (stats as any)[monsterAttackStyle].defence;
+	const defenceLevel = stats.skills.defence;
+
+	return Math.floor(
+		((defenceStat + 64) * (defenceLevel + 8)) / 10
+	);
+};
+
+// const monsterAugmentedDefence = calculateAugmentedStat(
+// 	// use defence against player's attack style
+// 	(monster.combat_stats as any)[$userStats.selectedAttackStyle].defence,
+// 	monster.skill_levels.defence
+// );
