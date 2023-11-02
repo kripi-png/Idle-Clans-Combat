@@ -1,7 +1,7 @@
 // stat is accuracy or defence value; level is the actual level
 // e.g. player can have level 90 attack and 100 melee accuracy
 export const calculateAugmentedStat = (stat: number, level: number) => {
-	return Math.floor(((stat + 64) * (level + 8)) / 10);
+	return Math.trunc(((stat + 64) * (level + 8)) / 10);
 };
 
 export const calculateHitChance = (attackerAccuracy: number, defenderDefence: number): number => {
