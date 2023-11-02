@@ -3,6 +3,11 @@
 	import UserStats from '$lib/components/UserStats.svelte';
 	import monsterData from '$lib/monsters.json';
 
+	import userStats, {
+		calculateUserAugmentedAccuracy,
+		calculateUserAugmentedDefence
+	} from '$lib/userStats';
+
 	const monsters: Monster[] = monsterData.monsters;
 
 	let searchQuery = '';
@@ -38,7 +43,12 @@
 			{#each monsters.filter((monster) => monster.name
 					.toLowerCase()
 					.includes(searchQuery.toLowerCase())) as monster}
-				<MonsterEntry {monster} />
+				{@const playerAccuracyAugmented = calculateUserAugmentedAccuracy($userStats)}
+				{@const playerDefenceAugmented = calculateUserAugmentedDefence(
+					monster.attack_style,
+					$userStats
+				)}
+				<MonsterEntry {monster} {playerAccuracyAugmented} {playerDefenceAugmented} />
 			{/each}
 		</tbody>
 	</table>

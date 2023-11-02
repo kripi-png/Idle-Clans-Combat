@@ -17,6 +17,9 @@ type Monster = {
 		archery: { strength: number; accuracy: number; defence: number };
 		magic: { strength: number; accuracy: number; defence: number };
 	};
+	// values that depend on user stats and are calculated during runtime
+	hitChance?: number;
+	chanceToGetHit?: number;
 };
 
 interface UserStats {
