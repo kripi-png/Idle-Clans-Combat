@@ -489,6 +489,126 @@
 				"archery": { "strength": 0, "accuracy": 0, "defence": 175 },
 				"magic": { "strength": 0, "accuracy": 0, "defence": 182 }
 			}
+		},
+		{
+			"name": "Zeus",
+			"combat_level": 333,
+			"health": 380,
+			"attack_interval": 3000,
+			"attack_style": "magic",
+			"attack_style_weakness": "archery",
+			"skill_levels": {
+				"rigour": 0,
+				"strength": 0,
+				"defence": 175,
+				"magic": 210,
+				"archery": 0
+			},
+			"combat_stats": {
+				"melee": { "strength": 0, "accuracy": 0, "defence": 145 },
+				"archery": { "strength": 0, "accuracy": 0, "defence": 140 },
+				"magic": { "strength": 55, "accuracy": 115, "defence": 180 }
+			}
+		},
+		{
+			"name": "Medusa",
+			"combat_level": 352,
+			"health": 425,
+			"attack_interval": 2500,
+			"attack_style": "archery",
+			"attack_style_weakness": "slash",
+			"skill_levels": {
+				"rigour": 0,
+				"strength": 0,
+				"defence": 175,
+				"magic": 0,
+				"archery": 195
+			},
+			"combat_stats": {
+				"melee": { "strength": 0, "accuracy": 0, "defence": 155 },
+				"archery": { "strength": 77, "accuracy": 120, "defence": 140 },
+				"magic": { "strength": 0, "accuracy": 0, "defence": 180 }
+			}
+		},
+		{
+			"name": "Hades",
+			"combat_level": 318,
+			"health": 350,
+			"attack_interval": 3000,
+			"attack_style": "magic",
+			"attack_style_weakness": "stab",
+			"skill_levels": {
+				"rigour": 0,
+				"strength": 0,
+				"defence": 175,
+				"magic": 210,
+				"archery": 0
+			},
+			"combat_stats": {
+				"melee": { "strength": 0, "accuracy": 0, "defence": 145 },
+				"archery": { "strength": 0, "accuracy": 0, "defence": 140 },
+				"magic": { "strength": 95, "accuracy": 35, "defence": 180 }
+			}
+		},
+		{
+			"name": "Griffin",
+			"combat_level": 428,
+			"health": 440,
+			"attack_interval": 3000,
+			"attack_style": "melee",
+			"attack_style_weakness": "crush",
+			"skill_levels": {
+				"rigour": 265,
+				"strength": 135,
+				"defence": 210,
+				"magic": 0,
+				"archery": 0
+			},
+			"combat_stats": {
+				"melee": { "strength": 75, "accuracy": 105, "defence": 190 },
+				"archery": { "strength": 0, "accuracy": 0, "defence": 175 },
+				"magic": { "strength": 0, "accuracy": 0, "defence": 180 }
+			}
+		},
+		{
+			"name": "Devil",
+			"combat_level": 403,
+			"health": 390,
+			"attack_interval": 3000,
+			"attack_style": "melee",
+			"attack_style_weakness": "pound",
+			"skill_levels": {
+				"rigour": 265,
+				"strength": 135,
+				"defence": 210,
+				"magic": 0,
+				"archery": 0
+			},
+			"combat_stats": {
+				"melee": { "strength": 125, "accuracy": 75, "defence": 190 },
+				"archery": { "strength": 0, "accuracy": 0, "defence": 175 },
+				"magic": { "strength": 0, "accuracy": 0, "defence": 180 }
+			}
+		},
+		{
+			"name": "Chimera",
+			"combat_level": 452,
+			"health": 500,
+			"attack_interval": 3000,
+			"attack_style": "melee",
+			"attack_style_weakness": "magic",
+			"skill_levels": {
+				"rigour": 190,
+				"strength": 165,
+				"defence": 220,
+				"magic": 0,
+				"archery": 0
+			},
+			"combat_stats": {
+				"melee": { "strength": 35, "accuracy": 135, "defence": 190 },
+				"archery": { "strength": 0, "accuracy": 0, "defence": 185 },
+				"magic": { "strength": 0, "accuracy": 0, "defence": 145 }
+			}
 		}
 	]
 }

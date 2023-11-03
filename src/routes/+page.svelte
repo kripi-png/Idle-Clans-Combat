@@ -20,8 +20,8 @@
 		consider them something of approximation.
 	</p>
 	<p class="note">
-		Click on a monster to display more details. Green name indicates <b>two</b>-hit-kill on avg. Red
-		name means possibility to get one-hit by the monster.
+		Click on a monster to display more details. Green name indicates <b>two</b>-hit-kill (or better)
+		on avg. Red name means possibility to get one-hit by the monster.
 	</p>
 	<h3>Player max hit: {playerMaxHit.toFixed(1)}</h3>
 	<table>
