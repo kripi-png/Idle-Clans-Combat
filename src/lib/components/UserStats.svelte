@@ -79,6 +79,11 @@
 			<input type="number" bind:value={$userStats.skills.defence} max="120" min="1" />
 		</label>
 		<label>
+			Health
+			<br />
+			<input type="number" bind:value={$userStats.skills.health} max="120" min="1" />
+		</label>
+		<label>
 			Archery
 			<br />
 			<input type="number" bind:value={$userStats.skills.archery} max="120" min="1" />

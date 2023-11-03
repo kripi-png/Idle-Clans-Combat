@@ -8,6 +8,7 @@ const DEFAULT_STATS: UserStats = {
 		attack: 1,
 		strength: 1,
 		defence: 1,
+		health: 1,
 		archery: 1,
 		magic: 1
 	},

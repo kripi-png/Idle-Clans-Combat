@@ -6,7 +6,7 @@
 
 	import userStats, { getStatsForSelectedAttackStyle } from '$lib/userStats';
 
-	const monsters: Monster[] = monsterData.monsters;
+	const monsters: MonsterData[] = monsterData.monsters;
 	// get attack style specific stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
 	$: playerMaxHit = calculateMaxDamagePerHit(playerStats.strength, playerStats.strengthLevel);
@@ -25,7 +25,10 @@
 		NOTE: Do not blindly trust these values. They are probably not 100% accurate (as of yet),
 		consider them something of approximation.
 	</p>
-	<p class="note">Click on a monster to display more details</p>
+	<p class="note">
+		Click on a monster to display more details. Green name indicates <b>two</b>-hit-kill on avg. Red
+		name means possibility to get one-hit by the monster.
+	</p>
 	<h3>Player max hit: {playerMaxHit.toFixed(1)}</h3>
 	<table>
 		<thead>
@@ -34,11 +37,11 @@
 				<th>Combat Level</th>
 				<th>Health</th>
 				--------
-				<th>Player Hit Chance</th>
-				<th>Player Max Hit</th>
+				<th>Player hit%</th>
+				<th>Avg. dmg / hit (max hit)</th>
 				--------
-				<th>Monster Hit Chance</th>
-				<th>Monster Max Hit</th>
+				<th>Monster hit%</th>
+				<th>Avg. dmg / hit (max Hit)</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -53,7 +56,12 @@
 					$userStats[monster.attack_style ?? 'melee'].defence,
 					playerStats.defenceLevel
 				)}
-				<MonsterEntry {monster} {playerAccuracyAugmented} {playerDefenceAugmented} {playerMaxHit} />
+				<MonsterEntry
+					monsterData={monster}
+					{playerAccuracyAugmented}
+					{playerDefenceAugmented}
+					{playerMaxHit}
+				/>
 			{/each}
 		</tbody>
 	</table>

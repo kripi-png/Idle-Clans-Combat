@@ -6,10 +6,18 @@
 		calculateMaxDamagePerHit
 	} from '$lib/functions';
 
-	export let monster: Monster;
+	export let monsterData: MonsterData;
 	export let playerAccuracyAugmented: number;
 	export let playerDefenceAugmented: number;
 	export let playerMaxHit: number;
+
+	const monster: Monster = {
+		...monsterData,
+		maxHit: 0,
+		hitChance: 0,
+		chanceToGetHit: 0,
+		averageDamagePerHit: 0
+	};
 
 	const skilllevels = monster.skill_levels;
 	const combatStats = monster.combat_stats;
@@ -42,6 +50,8 @@
 	$: monster.hitChance = calculateHitChance(augmentedAccuracy, playerDefenceAugmented);
 	// player's hit chance chance
 	$: monster.chanceToGetHit = calculateHitChance(playerAccuracyAugmented, augmentedDefence);
+	$: monster.averageDamagePerHit = (monster.maxHit / 2) * monster.hitChance;
+	$: playerAverageDamagePerHit = (playerMaxHit / 2) * monster.chanceToGetHit;
 
 	let isDetailed = false;
 </script>
@@ -51,15 +61,18 @@
 		isDetailed = !isDetailed;
 	}}
 >
-	<td>{monster.name}</td>
+	<td
+		class:green={playerAverageDamagePerHit >= monster.health / 2}
+		class:red={monster.maxHit >= $userStats.skills.health}>{monster.name}</td
+	>
 	<td>{monster.combat_level}</td>
 	<td>{monster.health}</td>
 	--------
-	<td>{((monster.chanceToGetHit || 0) * 100).toFixed(1)}</td>
-	<td>{playerMaxHit.toFixed(1)}</td>
+	<td>{(monster.chanceToGetHit * 100).toFixed(1)}</td>
+	<td>{playerAverageDamagePerHit.toFixed(1)} ({playerMaxHit})</td>
 	--------
-	<td>{((monster.hitChance || 0) * 100).toFixed(1)}</td>
-	<td>{(monster.maxHit || 0).toFixed(1)}</td>
+	<td>{(monster.hitChance * 100).toFixed(1)}</td>
+	<td>{monster.averageDamagePerHit.toFixed(1)} ({monster.maxHit.toFixed(1)})</td>
 </tr>
 {#if isDetailed}
 	<ul>
@@ -68,3 +81,15 @@
 		<li>Attack Style Weakness: {monster.attack_style_weakness}</li>
 	</ul>
 {/if}
+
+<style>
+	.green {
+		color: green;
+		font-weight: bold;
+	}
+
+	.red {
+		color: red;
+		font-weight: bold;
+	}
+</style>
