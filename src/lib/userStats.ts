@@ -1,5 +1,6 @@
 import { browser } from '$app/environment';
 import { writable } from 'svelte/store';
+import { calculateAugmentedStat } from './functions';
 
 const DEFAULT_STATS: UserStats = {
 	selectedAttackStyle: 'melee',
@@ -50,31 +51,31 @@ userStats.subscribe((storeValue) => {
 
 export default userStats;
 
-export const calculateUserAugmentedAccuracy = (stats: UserStats): number => {
-	const isUsingMelee = stats.selectedAttackStyle === 'melee';
-	const accuracyInSelectedAttackStyle = (stats as any)[stats.selectedAttackStyle].accuracy;
-	const skillForSelectedAttackStyle = isUsingMelee ? 'attack' : stats.selectedAttackStyle;
-	const skillLevelForSelectedAttackStyle = (stats.skills as any)[skillForSelectedAttackStyle];
-
-	return Math.floor(
-		((accuracyInSelectedAttackStyle + 64) * (skillLevelForSelectedAttackStyle + 8)) / 10
-	);
+type MinifiedUserStats = {
+	type: string;
+	damageType?: string | null;
+	attackLevel: number;
+	strengthLevel: number;
+	defenceLevel: number;
+	accuracy: number;
+	strength: number;
+	defence: number;
 };
 
-export const calculateUserAugmentedDefence = (
-	monsterAttackStyle: null | string,
-	stats: UserStats
-): number => {
-	if (!monsterAttackStyle) monsterAttackStyle = 'melee';
-	// use defence against monster's attack style
-	const defenceStat = (stats as any)[monsterAttackStyle].defence;
-	const defenceLevel = stats.skills.defence;
+export const getStatsForSelectedAttackStyle = (allStats: UserStats): MinifiedUserStats => {
+	const type = allStats.selectedAttackStyle;
+	const isMelee = type === 'melee';
+	const attackSkill = isMelee ? 'attack' : type;
+	const strenghtSkill = isMelee ? 'strength' : type;
+	const defenceSkill = 'defence';
 
-	return Math.floor(((defenceStat + 64) * (defenceLevel + 8)) / 10);
+	return {
+		type,
+		attackLevel: allStats.skills[attackSkill],
+		strengthLevel: allStats.skills[strenghtSkill],
+		defenceLevel: allStats.skills[defenceSkill],
+		accuracy: allStats[type].accuracy,
+		strength: allStats[type].strength,
+		defence: allStats[type].defence
+	};
 };
-
-// const monsterAugmentedDefence = calculateAugmentedStat(
-// 	// use defence against player's attack style
-// 	(monster.combat_stats as any)[$userStats.selectedAttackStyle].defence,
-// 	monster.skill_levels.defence
-// );

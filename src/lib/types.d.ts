@@ -1,4 +1,9 @@
-type Monster = {
+type IndexableObject = Record<string, string | Record>;
+type AttackStyles = 'melee' | 'archery' | 'magic';
+type skillNames = 'attack' | 'strength' | 'defence' | 'archery' | 'magic';
+type statNames = 'strength' | 'accuracy' | 'defence';
+
+interface Monster extends IndexableObject {
 	name: string;
 	combat_level: number | null;
 	health: number;
@@ -12,39 +17,19 @@ type Monster = {
 		magic: number;
 		archery: number;
 	};
-	combat_stats: {
-		melee: { strength: number; accuracy: number; defence: number };
-		archery: { strength: number; accuracy: number; defence: number };
-		magic: { strength: number; accuracy: number; defence: number };
-	};
+	combat_stats: Record<AttackStyles, Record<statNames, number>>;
 	// values that depend on user stats and are calculated during runtime
 	hitChance?: number;
 	chanceToGetHit?: number;
-};
+	maxHit?: number;
+	maxDamageTaken?: number;
+}
 
-interface UserStats {
-	selectedAttackStyle: string;
-	skills: {
-		attack: number;
-		strength: number;
-		defence: number;
-		archery: number;
-		magic: number;
-	};
+interface UserStats extends IndexableObject {
+	selectedAttackStyle: AttackStyles;
+	skills: Record<skillNames, number>;
 	// stats
-	melee: {
-		strength: number;
-		accuracy: number;
-		defence: number;
-	};
-	archery: {
-		strength: number;
-		accuracy: number;
-		defence: number;
-	};
-	magic: {
-		strength: number;
-		accuracy: number;
-		defence: number;
-	};
+	melee: Record<statNames, number>;
+	archery: Record<statNames, number>;
+	magic: Record<statNames, number>;
 }
