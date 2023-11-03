@@ -10,17 +10,11 @@
 	// get attack style specific stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
 	$: playerMaxHit = calculateMaxDamagePerHit(playerStats.strength, playerStats.strengthLevel);
-
-	let searchQuery = '';
 </script>
 
 <UserStats />
 
 <div class="monsterTable">
-	<label>
-		Search
-		<input type="text" bind:value={searchQuery} />
-	</label>
 	<p class="warning">
 		NOTE: Do not blindly trust these values. They are probably not 100% accurate (as of yet),
 		consider them something of approximation.
@@ -45,9 +39,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			{#each monsters.filter((monster) => monster.name
-					.toLowerCase()
-					.includes(searchQuery.toLowerCase())) as monster}
+			{#each monsters as monster}
 				{@const playerAccuracyAugmented = calculateAugmentedStat(
 					playerStats.accuracy,
 					playerStats.attackLevel
