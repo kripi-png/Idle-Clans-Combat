@@ -66,27 +66,27 @@
 		<label>
 			Attack
 			<br />
-			<input type="number" bind:value={$userStats.skills.attack} />
+			<input type="number" bind:value={$userStats.skills.attack} max="120" min="1" />
 		</label>
 		<label>
 			Strength
 			<br />
-			<input type="number" bind:value={$userStats.skills.strength} />
+			<input type="number" bind:value={$userStats.skills.strength} max="120" min="1" />
 		</label>
 		<label>
 			Defence
 			<br />
-			<input type="number" bind:value={$userStats.skills.defence} />
+			<input type="number" bind:value={$userStats.skills.defence} max="120" min="1" />
 		</label>
 		<label>
 			Archery
 			<br />
-			<input type="number" bind:value={$userStats.skills.archery} />
+			<input type="number" bind:value={$userStats.skills.archery} max="120" min="1" />
 		</label>
 		<label>
 			Magic
 			<br />
-			<input type="number" bind:value={$userStats.skills.magic} />
+			<input type="number" bind:value={$userStats.skills.magic} max="120" min="1" />
 		</label>
 	</div>
 </div>
