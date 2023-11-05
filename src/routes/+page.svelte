@@ -28,6 +28,10 @@
 		return value;
 	};
 
+	const addHealthIcon = (value: number | string): string => {
+		return value + '❤️';
+	};
+
 	const columns: ColumnDefinition[] = [
 		{ title: 'Name', field: 'name' },
 		{ title: 'Combat Level', field: 'combatLevel' },
@@ -41,7 +45,12 @@
 			field: 'monsterWeakness',
 			mutator: stylizeAttackStyle,
 		},
-		{ title: 'Health', field: 'health' },
+		{
+			title: 'Health',
+			field: 'health',
+			mutator: addHealthIcon,
+			sorter: 'number',
+		},
 		{
 			title: 'Player hit %',
 			field: 'playerHitPercent',
@@ -57,7 +66,8 @@
 		{
 			title: 'Monster max hit',
 			field: 'monsterMaxHit',
-			mutator: (value) => value.toFixed(1),
+			mutator: (value) => addHealthIcon(value.toFixed(1)),
+			sorter: 'number',
 		},
 	];
 </script>
@@ -73,7 +83,7 @@
 		Green name indicates <b>two</b>-hit-kill (or better)
 		on avg. Red name means possibility to get one-hit by the monster.
 	</p> -->
-	<h3>Player max hit: {playerMaxHit.toFixed(1)}</h3>
+	<h3>Player max hit: {addHealthIcon(playerMaxHit.toFixed(1))}</h3>
 	<MonsterTable data={monsterData.monsters} {columns} />
 </div>
 
