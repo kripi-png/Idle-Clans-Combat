@@ -69,6 +69,18 @@
 			mutator: (value) => addHealthIcon(value.toFixed(1)),
 			sorter: 'number',
 		},
+		{
+			title: 'Monster avg. hit',
+			field: 'monsterAverageHit',
+			mutator: (value) => addHealthIcon(value.toFixed(1)),
+			sorter: 'number',
+		},
+		{
+			title: 'Player avg. hit',
+			field: 'playerAverageHit',
+			mutator: (value) => addHealthIcon(value.toFixed(1)),
+			sorter: 'number',
+		},
 	];
 </script>
 
@@ -84,7 +96,7 @@
 		on avg. Red name means possibility to get one-hit by the monster.
 	</p> -->
 	<h3>Player max hit: {addHealthIcon(playerMaxHit.toFixed(1))}</h3>
-	<MonsterTable data={monsterData.monsters} {columns} />
+	<MonsterTable data={monsterData.monsters} {columns} {playerMaxHit} />
 </div>
 
 <style>

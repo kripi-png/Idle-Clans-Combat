@@ -11,6 +11,7 @@
 
 	export let columns: ColumnDefinition[];
 	export let data: MonsterData[];
+	export let playerMaxHit: number;
 
 	// some of player's stats can be calculated without information on specific monster's stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
@@ -46,6 +47,19 @@
 			monster.combat_stats[playerStats.type as AttackStyles].defence,
 			monster.skill_levels.defence,
 		);
+
+		const playerHitPercent = calculateHitChance(
+			playerAccuracyAugmented,
+			monsterDefenceAugmented,
+		);
+		const monsterHitPercent = calculateHitChance(
+			monsterAccuracyAugmented,
+			playerDefenceAugmented,
+		);
+		const monsterMaxHit = calculateMaxDamagePerHit(
+			monster.combat_stats[monsterAttackStyle].strength,
+			monster.skill_levels[monsterStrengthSkill],
+		);
 		// Monster
 		return {
 			id: index,
@@ -54,18 +68,11 @@
 			monsterAttackStyle: monsterAttackStyle,
 			monsterWeakness: monster.attack_style_weakness,
 			health: monster.health,
-			playerHitPercent: calculateHitChance(
-				playerAccuracyAugmented,
-				monsterDefenceAugmented,
-			),
-			monsterHitPercent: calculateHitChance(
-				monsterAccuracyAugmented,
-				playerDefenceAugmented,
-			),
-			monsterMaxHit: calculateMaxDamagePerHit(
-				monster.combat_stats[monsterAttackStyle].strength,
-				monster.skill_levels[monsterStrengthSkill],
-			),
+			playerHitPercent,
+			monsterHitPercent,
+			monsterMaxHit,
+			playerAverageHit: (playerMaxHit / 2) * playerHitPercent,
+			monsterAverageHit: (monsterMaxHit / 2) * monsterHitPercent,
 		};
 	};
 
