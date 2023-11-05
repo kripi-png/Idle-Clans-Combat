@@ -1,6 +1,9 @@
 <script lang="ts">
 	import type { ColumnDefinition } from 'tabulator-tables';
-	import { calculateAugmentedStat, calculateMaxDamagePerHit } from '$lib/functions';
+	import {
+		calculateAugmentedStat,
+		calculateMaxDamagePerHit,
+	} from '$lib/functions';
 	import MonsterTable from '$lib/components/MonsterTable.svelte';
 	import UserStats from '$lib/components/UserStats.svelte';
 	import monsterData from '$lib/monsters.json';
@@ -9,7 +12,10 @@
 
 	// get attack style specific stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
-	$: playerMaxHit = calculateMaxDamagePerHit(playerStats.strength, playerStats.strengthLevel);
+	$: playerMaxHit = calculateMaxDamagePerHit(
+		playerStats.strength,
+		playerStats.strengthLevel,
+	);
 
 	const percentageize = (value: number): string => {
 		// convert decimal to string with %-character
@@ -18,19 +24,41 @@
 	};
 
 	const stylizeAttackStyle = (value: string): string => {
-		if (!value) return "-";
+		if (!value) return '-';
 		return value;
-	}
+	};
 
 	const columns: ColumnDefinition[] = [
 		{ title: 'Name', field: 'name' },
 		{ title: 'Combat Level', field: 'combatLevel' },
-		{ title: "Attack Style", field: "monsterAttackStyle", mutator: stylizeAttackStyle, },
-		{ title: "Weakness", field: "monsterWeakness", mutator: stylizeAttackStyle, },
+		{
+			title: 'Attack Style',
+			field: 'monsterAttackStyle',
+			mutator: stylizeAttackStyle,
+		},
+		{
+			title: 'Weakness',
+			field: 'monsterWeakness',
+			mutator: stylizeAttackStyle,
+		},
 		{ title: 'Health', field: 'health' },
-		{ title: 'Player hit %', field: 'playerHitPercent', mutator: percentageize, sorter: "number" },
-		{ title: 'Monster hit %', field: 'monsterHitPercent', mutator: percentageize, sorter: "number" },
-		{ title: 'Monster max hit', field: 'monsterMaxHit', mutator: value => value.toFixed(1) }
+		{
+			title: 'Player hit %',
+			field: 'playerHitPercent',
+			mutator: percentageize,
+			sorter: 'number',
+		},
+		{
+			title: 'Monster hit %',
+			field: 'monsterHitPercent',
+			mutator: percentageize,
+			sorter: 'number',
+		},
+		{
+			title: 'Monster max hit',
+			field: 'monsterMaxHit',
+			mutator: (value) => value.toFixed(1),
+		},
 	];
 </script>
 
@@ -38,8 +66,8 @@
 
 <div>
 	<p class="warning">
-		NOTE: Do not blindly trust these values. They are probably not 100% accurate (as of yet),
-		consider them something of approximation.
+		NOTE: Do not blindly trust these values. They are probably not 100% accurate
+		(as of yet), consider them something of approximation.
 	</p>
 	<!-- <p class="note">
 		Green name indicates <b>two</b>-hit-kill (or better)
@@ -52,8 +80,5 @@
 <style>
 	.warning {
 		color: red;
-	}
-	.note {
-		color: blue;
 	}
 </style>

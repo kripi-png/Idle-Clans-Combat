@@ -1,6 +1,12 @@
 type IndexableObject = Record<string, string | Record>;
 type AttackStyles = 'melee' | 'archery' | 'magic';
-type SkillNames = 'attack' | 'strength' | 'defence' | 'health' | 'archery' | 'magic';
+type SkillNames =
+	| 'attack'
+	| 'strength'
+	| 'defence'
+	| 'health'
+	| 'archery'
+	| 'magic';
 type StatNames = 'strength' | 'accuracy' | 'defence';
 
 interface MonsterData extends IndexableObject {

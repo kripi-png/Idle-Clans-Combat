@@ -4,7 +4,10 @@ export const calculateAugmentedStat = (stat: number, level: number) => {
 	return Math.trunc(((stat + 64) * (level + 8)) / 10);
 };
 
-export const calculateHitChance = (attackerAccuracy: number, defenderDefence: number): number => {
+export const calculateHitChance = (
+	attackerAccuracy: number,
+	defenderDefence: number,
+): number => {
 	// hit chance is calculated differently depending on which value is higher
 	let hitChance =
 		attackerAccuracy < defenderDefence

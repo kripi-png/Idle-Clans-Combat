@@ -2,7 +2,11 @@
 	import { TabulatorFull as Tabulator } from 'tabulator-tables';
 	import type { ColumnDefinition } from 'tabulator-tables';
 	import { onMount } from 'svelte';
-	import { calculateHitChance, calculateMaxDamagePerHit, calculateAugmentedStat } from '$lib/functions';
+	import {
+		calculateHitChance,
+		calculateMaxDamagePerHit,
+		calculateAugmentedStat,
+	} from '$lib/functions';
 	import userStats, { getStatsForSelectedAttackStyle } from '$lib/userStats';
 
 	export let columns: ColumnDefinition[];
@@ -12,29 +16,35 @@
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
 	$: playerAccuracyAugmented = calculateAugmentedStat(
 		playerStats.accuracy,
-		playerStats.attackLevel
+		playerStats.attackLevel,
 	);
 
-	const calculateMonsterEntry = (monster: MonsterData, index: number): Monster => {
+	const calculateMonsterEntry = (
+		monster: MonsterData,
+		index: number,
+	): Monster => {
 		// default to melee
-		const monsterAttackStyle = (monster.attack_style ?? 'melee') as AttackStyles;
-		const monsterAttackSkill = monsterAttackStyle === 'melee' ? 'attack' : monsterAttackStyle;
-		const monsterStrengthSkill = monsterAttackStyle === 'melee' ? 'strength' : monsterAttackStyle;
+		const monsterAttackStyle = (monster.attack_style ??
+			'melee') as AttackStyles;
+		const monsterAttackSkill =
+			monsterAttackStyle === 'melee' ? 'attack' : monsterAttackStyle;
+		const monsterStrengthSkill =
+			monsterAttackStyle === 'melee' ? 'strength' : monsterAttackStyle;
 
 		// defence is dependant on monster
 		const playerDefenceAugmented = calculateAugmentedStat(
 			$userStats[monsterAttackStyle].defence,
-			playerStats.defenceLevel
+			playerStats.defenceLevel,
 		);
 
 		const monsterAccuracyAugmented = calculateAugmentedStat(
 			monster.combat_stats[monsterAttackStyle].accuracy,
-			monster.skill_levels[monsterAttackSkill]
+			monster.skill_levels[monsterAttackSkill],
 		);
 
 		const monsterDefenceAugmented = calculateAugmentedStat(
 			monster.combat_stats[playerStats.type as AttackStyles].defence,
-			monster.skill_levels.defence
+			monster.skill_levels.defence,
 		);
 		// Monster
 		return {
@@ -44,9 +54,18 @@
 			monsterAttackStyle: monsterAttackStyle,
 			monsterWeakness: monster.attack_style_weakness,
 			health: monster.health,
-			playerHitPercent: calculateHitChance(playerAccuracyAugmented, monsterDefenceAugmented),
-			monsterHitPercent: calculateHitChance(monsterAccuracyAugmented, playerDefenceAugmented),
-			monsterMaxHit: calculateMaxDamagePerHit(monster.combat_stats[monsterAttackStyle].strength, monster.skill_levels[monsterStrengthSkill]),
+			playerHitPercent: calculateHitChance(
+				playerAccuracyAugmented,
+				monsterDefenceAugmented,
+			),
+			monsterHitPercent: calculateHitChance(
+				monsterAccuracyAugmented,
+				playerDefenceAugmented,
+			),
+			monsterMaxHit: calculateMaxDamagePerHit(
+				monster.combat_stats[monsterAttackStyle].strength,
+				monster.skill_levels[monsterStrengthSkill],
+			),
 		};
 	};
 
@@ -54,14 +73,19 @@
 	// so empty the list and set new data using the method
 	// if (playerStats) is used to make the process reactive to that value also
 	let monsterData: Monster[] = [];
-	$: if (playerStats) monsterData.splice(0, monsterData.length, ...data.map(calculateMonsterEntry));
+	$: if (playerStats)
+		monsterData.splice(
+			0,
+			monsterData.length,
+			...data.map(calculateMonsterEntry),
+		);
 
 	let tableComponent: HTMLDivElement;
 	onMount(() => {
 		new Tabulator(tableComponent, {
 			reactiveData: true,
 			data: monsterData,
-			columns: columns
+			columns: columns,
 		});
 	});
 </script>

@@ -66,32 +66,62 @@ User Stats
 		<label>
 			Attack
 			<br />
-			<input type="number" bind:value={$userStats.skills.attack} max="120" min="1" />
+			<input
+				type="number"
+				bind:value={$userStats.skills.attack}
+				max="120"
+				min="1"
+			/>
 		</label>
 		<label>
 			Strength
 			<br />
-			<input type="number" bind:value={$userStats.skills.strength} max="120" min="1" />
+			<input
+				type="number"
+				bind:value={$userStats.skills.strength}
+				max="120"
+				min="1"
+			/>
 		</label>
 		<label>
 			Defence
 			<br />
-			<input type="number" bind:value={$userStats.skills.defence} max="120" min="1" />
+			<input
+				type="number"
+				bind:value={$userStats.skills.defence}
+				max="120"
+				min="1"
+			/>
 		</label>
 		<label>
 			Health
 			<br />
-			<input type="number" bind:value={$userStats.skills.health} max="120" min="1" />
+			<input
+				type="number"
+				bind:value={$userStats.skills.health}
+				max="120"
+				min="1"
+			/>
 		</label>
 		<label>
 			Archery
 			<br />
-			<input type="number" bind:value={$userStats.skills.archery} max="120" min="1" />
+			<input
+				type="number"
+				bind:value={$userStats.skills.archery}
+				max="120"
+				min="1"
+			/>
 		</label>
 		<label>
 			Magic
 			<br />
-			<input type="number" bind:value={$userStats.skills.magic} max="120" min="1" />
+			<input
+				type="number"
+				bind:value={$userStats.skills.magic}
+				max="120"
+				min="1"
+			/>
 		</label>
 	</div>
 </div>
@@ -99,17 +129,29 @@ User Stats
 	<label>
 		Melee
 		<br />
-		<input type="radio" value="melee" bind:group={$userStats.selectedAttackStyle} />
+		<input
+			type="radio"
+			value="melee"
+			bind:group={$userStats.selectedAttackStyle}
+		/>
 	</label>
 	<label>
 		Archery
 		<br />
-		<input type="radio" value="archery" bind:group={$userStats.selectedAttackStyle} />
+		<input
+			type="radio"
+			value="archery"
+			bind:group={$userStats.selectedAttackStyle}
+		/>
 	</label>
 	<label>
 		Magic
 		<br />
-		<input type="radio" value="magic" bind:group={$userStats.selectedAttackStyle} />
+		<input
+			type="radio"
+			value="magic"
+			bind:group={$userStats.selectedAttackStyle}
+		/>
 	</label>
 </div>
 

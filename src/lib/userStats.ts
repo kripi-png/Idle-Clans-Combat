@@ -10,24 +10,24 @@ const DEFAULT_STATS: UserStats = {
 		defence: 1,
 		health: 1,
 		archery: 1,
-		magic: 1
+		magic: 1,
 	},
 	// stats
 	melee: {
 		strength: 0,
 		accuracy: 0,
-		defence: 0
+		defence: 0,
 	},
 	archery: {
 		strength: 0,
 		accuracy: 0,
-		defence: 0
+		defence: 0,
 	},
 	magic: {
 		strength: 0,
 		accuracy: 0,
-		defence: 0
-	}
+		defence: 0,
+	},
 };
 
 let initialValue = DEFAULT_STATS;
@@ -63,7 +63,9 @@ type MinifiedUserStats = {
 	defence: number;
 };
 
-export const getStatsForSelectedAttackStyle = (allStats: UserStats): MinifiedUserStats => {
+export const getStatsForSelectedAttackStyle = (
+	allStats: UserStats,
+): MinifiedUserStats => {
 	const type = allStats.selectedAttackStyle;
 	const isMelee = type === 'melee';
 	const attackSkill = isMelee ? 'attack' : type;
@@ -77,6 +79,6 @@ export const getStatsForSelectedAttackStyle = (allStats: UserStats): MinifiedUse
 		defenceLevel: allStats.skills[defenceSkill],
 		accuracy: allStats[type].accuracy,
 		strength: allStats[type].strength,
-		defence: allStats[type].defence
+		defence: allStats[type].defence,
 	};
 };
