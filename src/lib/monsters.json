@@ -7,7 +7,13 @@
 			"attack_interval": 4000,
 			"attack_style": null,
 			"attack_style_weakness": null,
-			"skill_levels": { "rigour": 0, "strength": 0, "defence": 0, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 0,
+				"strength": 0,
+				"defence": 0,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": -42, "defence": -25 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 0 },
@@ -21,7 +27,13 @@
 			"attack_interval": 2500,
 			"attack_style": null,
 			"attack_style_weakness": null,
-			"skill_levels": { "rigour": 2, "strength": 3, "defence": 3, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 2,
+				"strength": 3,
+				"defence": 3,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 2 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 0 },
@@ -35,7 +47,13 @@
 			"attack_interval": 2500,
 			"attack_style": null,
 			"attack_style_weakness": null,
-			"skill_levels": { "rigour": 5, "strength": 4, "defence": 5, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 5,
+				"strength": 4,
+				"defence": 5,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 2, "accuracy": 3, "defence": 5 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 0 },
@@ -49,7 +67,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": null,
-			"skill_levels": { "rigour": 4, "strength": 4, "defence": 8, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 4,
+				"strength": 4,
+				"defence": 8,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 2, "accuracy": 3, "defence": 7 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 6 },
@@ -63,7 +87,13 @@
 			"attack_interval": 3500,
 			"attack_style": null,
 			"attack_style_weakness": null,
-			"skill_levels": { "rigour": 10, "strength": 12, "defence": 14, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 10,
+				"strength": 12,
+				"defence": 14,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 7, "accuracy": 8, "defence": 12 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 4 },
@@ -77,7 +107,13 @@
 			"attack_interval": 4000,
 			"attack_style": null,
 			"attack_style_weakness": "pound",
-			"skill_levels": { "rigour": 12, "strength": 14, "defence": 10, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 12,
+				"strength": 14,
+				"defence": 10,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 18, "accuracy": 14, "defence": 12 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 12 },
@@ -91,7 +127,13 @@
 			"attack_interval": 3750,
 			"attack_style": null,
 			"attack_style_weakness": "archery",
-			"skill_levels": { "rigour": 16, "strength": 19, "defence": 6, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 16,
+				"strength": 19,
+				"defence": 6,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 15, "accuracy": 16, "defence": 8 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 6 },
@@ -105,7 +147,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "stab",
-			"skill_levels": { "rigour": 6, "strength": 13, "defence": 13, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 6,
+				"strength": 13,
+				"defence": 13,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 4, "accuracy": 4, "defence": 15 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 16 },
@@ -119,7 +167,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "stab",
-			"skill_levels": { "rigour": 11, "strength": 13, "defence": 11, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 11,
+				"strength": 13,
+				"defence": 11,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 13, "accuracy": 15, "defence": 10 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 12 },
@@ -133,7 +187,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "slash",
-			"skill_levels": { "rigour": 16, "strength": 18, "defence": 15, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 16,
+				"strength": 18,
+				"defence": 15,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 17, "accuracy": 18, "defence": 20 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 12 },
@@ -147,7 +207,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "archery",
-			"skill_levels": { "rigour": 22, "strength": 24, "defence": 25, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 22,
+				"strength": 24,
+				"defence": 25,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 33, "accuracy": 29, "defence": 30 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 18 },
@@ -161,7 +227,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "magic",
-			"skill_levels": { "rigour": 22, "strength": 30, "defence": 30, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 22,
+				"strength": 30,
+				"defence": 30,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 27, "accuracy": 33, "defence": 31 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 22 },
@@ -175,7 +247,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "crush",
-			"skill_levels": { "rigour": 31, "strength": 35, "defence": 25, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 31,
+				"strength": 35,
+				"defence": 25,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 31, "accuracy": 27, "defence": 25 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 14 },
@@ -189,7 +267,13 @@
 			"attack_interval": 3000,
 			"attack_style": "magic",
 			"attack_style_weakness": "slash",
-			"skill_levels": { "rigour": 5, "strength": 6, "defence": 24, "magic": 39, "archery": 0 },
+			"skill_levels": {
+				"attack": 5,
+				"strength": 6,
+				"defence": 24,
+				"magic": 39,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 12 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 18 },
@@ -203,7 +287,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "crush",
-			"skill_levels": { "rigour": 36, "strength": 36, "defence": 34, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 36,
+				"strength": 36,
+				"defence": 34,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 32, "accuracy": 27, "defence": 29 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 30 },
@@ -217,7 +307,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "magic",
-			"skill_levels": { "rigour": 40, "strength": 41, "defence": 40, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 40,
+				"strength": 41,
+				"defence": 40,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 33, "accuracy": 31, "defence": 33 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 31 },
@@ -231,7 +327,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "archery",
-			"skill_levels": { "rigour": 45, "strength": 43, "defence": 40, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 45,
+				"strength": 43,
+				"defence": 40,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 37, "accuracy": 38, "defence": 35 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 32 },
@@ -245,7 +347,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "magic",
-			"skill_levels": { "rigour": 46, "strength": 44, "defence": 37, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 46,
+				"strength": 44,
+				"defence": 37,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 36, "accuracy": 35, "defence": 32 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 32 },
@@ -259,7 +367,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "slash",
-			"skill_levels": { "rigour": 46, "strength": 46, "defence": 45, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 46,
+				"strength": 46,
+				"defence": 45,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 41, "accuracy": 38, "defence": 37 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 37 },
@@ -273,7 +387,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "stab",
-			"skill_levels": { "rigour": 47, "strength": 50, "defence": 44, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 47,
+				"strength": 50,
+				"defence": 44,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 42, "accuracy": 41, "defence": 39 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 39 },
@@ -287,7 +407,13 @@
 			"attack_interval": 3000,
 			"attack_style": "magic",
 			"attack_style_weakness": "crush",
-			"skill_levels": { "rigour": 11, "strength": 8, "defence": 32, "magic": 49, "archery": 0 },
+			"skill_levels": {
+				"attack": 11,
+				"strength": 8,
+				"defence": 32,
+				"magic": 49,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 25 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 32 },
@@ -301,7 +427,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "pound",
-			"skill_levels": { "rigour": 53, "strength": 54, "defence": 54, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 53,
+				"strength": 54,
+				"defence": 54,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 47, "accuracy": 44, "defence": 49 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 44 },
@@ -315,7 +447,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "archery",
-			"skill_levels": { "rigour": 56, "strength": 58, "defence": 55, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 56,
+				"strength": 58,
+				"defence": 55,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 51, "accuracy": 53, "defence": 54 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 49 },
@@ -329,7 +467,13 @@
 			"attack_interval": 3000,
 			"attack_style": "magic",
 			"attack_style_weakness": "crush",
-			"skill_levels": { "rigour": 24, "strength": 25, "defence": 55, "magic": 70, "archery": 0 },
+			"skill_levels": {
+				"attack": 24,
+				"strength": 25,
+				"defence": 55,
+				"magic": 70,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 65 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 55 },
@@ -343,7 +487,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "slash",
-			"skill_levels": { "rigour": 65, "strength": 68, "defence": 66, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 65,
+				"strength": 68,
+				"defence": 66,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 71, "accuracy": 68, "defence": 72 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 75 },
@@ -357,7 +507,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "pound",
-			"skill_levels": { "rigour": 75, "strength": 76, "defence": 70, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 75,
+				"strength": 76,
+				"defence": 70,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 78, "accuracy": 83, "defence": 81 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 75 },
@@ -371,7 +527,13 @@
 			"attack_interval": 3000,
 			"attack_style": "magic",
 			"attack_style_weakness": "stab",
-			"skill_levels": { "rigour": 42, "strength": 44, "defence": 72, "magic": 82, "archery": 0 },
+			"skill_levels": {
+				"attack": 42,
+				"strength": 44,
+				"defence": 72,
+				"magic": 82,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 86 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 75 },
@@ -385,7 +547,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "magic",
-			"skill_levels": { "rigour": 81, "strength": 84, "defence": 83, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 81,
+				"strength": 84,
+				"defence": 83,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 89, "accuracy": 94, "defence": 92 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 95 },
@@ -399,7 +567,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "archery",
-			"skill_levels": { "rigour": 89, "strength": 91, "defence": 87, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 89,
+				"strength": 91,
+				"defence": 87,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 94, "accuracy": 97, "defence": 98 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 91 },
@@ -413,7 +587,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "pound",
-			"skill_levels": { "rigour": 115, "strength": 95, "defence": 108, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 115,
+				"strength": 95,
+				"defence": 108,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 86, "accuracy": 90, "defence": 120 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 140 },
@@ -427,7 +607,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "stab",
-			"skill_levels": { "rigour": 118, "strength": 98, "defence": 112, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 118,
+				"strength": 98,
+				"defence": 112,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 91, "accuracy": 97, "defence": 128 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 149 },
@@ -441,7 +627,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "magic",
-			"skill_levels": { "rigour": 122, "strength": 101, "defence": 116, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 122,
+				"strength": 101,
+				"defence": 116,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 95, "accuracy": 100, "defence": 139 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 152 },
@@ -455,7 +647,13 @@
 			"attack_interval": 3000,
 			"attack_style": "archery",
 			"attack_style_weakness": "crush",
-			"skill_levels": { "rigour": 0, "strength": 0, "defence": 122, "magic": 0, "archery": 122 },
+			"skill_levels": {
+				"attack": 0,
+				"strength": 0,
+				"defence": 122,
+				"magic": 0,
+				"archery": 122
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 140 },
 				"archery": { "strength": 45, "accuracy": 100, "defence": 135 },
@@ -469,7 +667,13 @@
 			"attack_interval": 3000,
 			"attack_style": "magic",
 			"attack_style_weakness": "slash",
-			"skill_levels": { "rigour": 0, "strength": 0, "defence": 110, "magic": 105, "archery": 0 },
+			"skill_levels": {
+				"attack": 0,
+				"strength": 0,
+				"defence": 110,
+				"magic": 105,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 0, "accuracy": 0, "defence": 140 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 142 },
@@ -483,7 +687,13 @@
 			"attack_interval": 3000,
 			"attack_style": null,
 			"attack_style_weakness": "archery",
-			"skill_levels": { "rigour": 130, "strength": 105, "defence": 130, "magic": 0, "archery": 0 },
+			"skill_levels": {
+				"attack": 130,
+				"strength": 105,
+				"defence": 130,
+				"magic": 0,
+				"archery": 0
+			},
 			"combat_stats": {
 				"melee": { "strength": 102, "accuracy": 112, "defence": 188 },
 				"archery": { "strength": 0, "accuracy": 0, "defence": 175 },
@@ -498,7 +708,7 @@
 			"attack_style": "magic",
 			"attack_style_weakness": "archery",
 			"skill_levels": {
-				"rigour": 0,
+				"attack": 0,
 				"strength": 0,
 				"defence": 175,
 				"magic": 210,
@@ -518,7 +728,7 @@
 			"attack_style": "archery",
 			"attack_style_weakness": "slash",
 			"skill_levels": {
-				"rigour": 0,
+				"attack": 0,
 				"strength": 0,
 				"defence": 175,
 				"magic": 0,
@@ -538,7 +748,7 @@
 			"attack_style": "magic",
 			"attack_style_weakness": "stab",
 			"skill_levels": {
-				"rigour": 0,
+				"attack": 0,
 				"strength": 0,
 				"defence": 175,
 				"magic": 210,
@@ -558,7 +768,7 @@
 			"attack_style": "melee",
 			"attack_style_weakness": "crush",
 			"skill_levels": {
-				"rigour": 265,
+				"attack": 265,
 				"strength": 135,
 				"defence": 210,
 				"magic": 0,
@@ -578,7 +788,7 @@
 			"attack_style": "melee",
 			"attack_style_weakness": "pound",
 			"skill_levels": {
-				"rigour": 265,
+				"attack": 265,
 				"strength": 135,
 				"defence": 210,
 				"magic": 0,
@@ -598,7 +808,7 @@
 			"attack_style": "melee",
 			"attack_style_weakness": "magic",
 			"skill_levels": {
-				"rigour": 190,
+				"attack": 190,
 				"strength": 165,
 				"defence": 220,
 				"magic": 0,

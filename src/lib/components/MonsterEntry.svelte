@@ -1,4 +1,4 @@
-<script lang="ts">
+<!-- <script lang="ts">
 	import userStats from '$lib/userStats';
 	import {
 		calculateAugmentedStat,
@@ -92,4 +92,4 @@
 		color: red;
 		font-weight: bold;
 	}
-</style>
+</style> -->
