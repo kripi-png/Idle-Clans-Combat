@@ -2,9 +2,9 @@
 	import userStats from '$lib/userStats';
 </script>
 
+User Stats
 <div class="userStats">
 	<div class="statList">
-		User Stats
 		<div class="attackStyleStats">
 			<h2>Melee</h2>
 			<label>
