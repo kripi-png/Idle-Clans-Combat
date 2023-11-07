@@ -30,5 +30,5 @@ export const calculateMaxDamagePerHit = (stat: number, level: number) => {
 	// >>> they will have a max hit of (96/8 + 90 + 13 + 96*90/64) / 10 = 25
 	// max hit is also calculated before other bonuses such as potions and enchantments
 	const maxHit = (stat / 8 + level + 13 + (stat * level) / 64) / 10;
-	return Math.trunc(maxHit);
+	return [Math.trunc(maxHit), maxHit] as const;
 };

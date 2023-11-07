@@ -12,7 +12,7 @@
 
 	// get attack style specific stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
-	$: playerMaxHit = calculateMaxDamagePerHit(
+	$: [playerMaxHit, playerMaxHit_exact] = calculateMaxDamagePerHit(
 		playerStats.strength,
 		playerStats.strengthLevel,
 	);
@@ -72,7 +72,7 @@
 		{
 			title: 'Monster max hit',
 			field: 'monsterMaxHit',
-			mutator: (value) => addHealthIcon(value.toFixed(1)),
+			mutator: (value) => addHealthIcon(value),
 			sorter: 'number',
 		},
 		{
@@ -101,7 +101,10 @@
 		Green name indicates <b>two</b>-hit-kill (or better)
 		on avg. Red name means possibility to get one-hit by the monster.
 	</p> -->
-	<h3>Player max hit: {addHealthIcon(playerMaxHit.toFixed(1))}</h3>
+	<h3>
+		Player max hit: {addHealthIcon(playerMaxHit)}
+		(exact value: {playerMaxHit_exact?.toFixed(2)})
+	</h3>
 	<MonsterTable data={monsterData.monsters} {columns} {playerMaxHit} />
 </div>
 

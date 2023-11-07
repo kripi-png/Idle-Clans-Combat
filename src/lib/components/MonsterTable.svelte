@@ -59,7 +59,7 @@
 			playerDefenceAugmented,
 			false,
 		);
-		const monsterMaxHit = calculateMaxDamagePerHit(
+		const [monsterMaxHit, _] = calculateMaxDamagePerHit(
 			monster.combat_stats[monsterAttackStyle].strength,
 			monster.skill_levels[monsterStrengthSkill],
 		);
