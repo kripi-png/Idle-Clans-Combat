@@ -51,10 +51,13 @@
 		const playerHitPercent = calculateHitChance(
 			playerAccuracyAugmented,
 			monsterDefenceAugmented,
+			playerStats.damageType === monster.attack_style_weakness,
 		);
+		// monsters do not gain the buff from correct style
 		const monsterHitPercent = calculateHitChance(
 			monsterAccuracyAugmented,
 			playerDefenceAugmented,
+			false,
 		);
 		const monsterMaxHit = calculateMaxDamagePerHit(
 			monster.combat_stats[monsterAttackStyle].strength,

@@ -7,7 +7,14 @@ export const calculateAugmentedStat = (stat: number, level: number) => {
 export const calculateHitChance = (
 	attackerAccuracy: number,
 	defenderDefence: number,
+	applyBoostFromAttackStyle: boolean,
 ): number => {
+	if (applyBoostFromAttackStyle) {
+		// lower defence by 20% if attacker is using attack style the defender is weak to
+		// for example, vampires are weak to slash, so if player is using scimitar (slash damage),
+		// reduce the vampire's defence by 20%
+		defenderDefence = defenderDefence * 0.8;
+	}
 	// hit chance is calculated differently depending on which value is higher
 	let hitChance =
 		attackerAccuracy < defenderDefence
