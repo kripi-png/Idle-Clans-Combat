@@ -28,6 +28,12 @@
 		return value;
 	};
 
+	const addIconIfMatching = (value: string): string => {
+		// return playerStats.damageType
+		if (value === playerStats.damageType) return value + '✔️';
+		return value;
+	};
+
 	const addHealthIcon = (value: number | string): string => {
 		return value + '❤️';
 	};
@@ -43,7 +49,7 @@
 		{
 			title: 'Weakness',
 			field: 'monsterWeakness',
-			mutator: stylizeAttackStyle,
+			mutator: (value) => addIconIfMatching(stylizeAttackStyle(value)),
 		},
 		{
 			title: 'Health',
