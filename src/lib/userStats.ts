@@ -3,7 +3,7 @@ import { writable } from 'svelte/store';
 import { calculateAugmentedStat } from './functions';
 
 const DEFAULT_STATS: UserStats = {
-	selectedAttackStyle: 'melee',
+	selectedDamageType: 'crush',
 	skills: {
 		attack: 1,
 		strength: 1,
@@ -53,8 +53,9 @@ userStats.subscribe((storeValue) => {
 export default userStats;
 
 type MinifiedUserStats = {
-	type: string;
-	damageType?: string | null;
+	type: AttackStyles;
+	damageType: DamageTypes;
+	isMelee: boolean;
 	attackLevel: number;
 	strengthLevel: number;
 	defenceLevel: number;
@@ -66,14 +67,17 @@ type MinifiedUserStats = {
 export const getStatsForSelectedAttackStyle = (
 	allStats: UserStats,
 ): MinifiedUserStats => {
-	const type = allStats.selectedAttackStyle;
-	const isMelee = type === 'melee';
-	const attackSkill = isMelee ? 'attack' : type;
-	const strenghtSkill = isMelee ? 'strength' : type;
-	const defenceSkill = 'defence';
+	const damageType = allStats.selectedDamageType;
+	const isMelee = damageType !== 'archery' && damageType !== 'magic';
+	const type = isMelee ? 'melee' : (damageType as AttackStyles); // melee / archery / magic
+	const attackSkill = isMelee ? 'attack' : (type as SkillNames); // attack / archery / magic
+	const strenghtSkill = isMelee ? 'strength' : (type as SkillNames); // strength / archery / magic
+	const defenceSkill = 'defence' as SkillNames;
 
 	return {
 		type,
+		damageType,
+		isMelee,
 		attackLevel: allStats.skills[attackSkill],
 		strengthLevel: allStats.skills[strenghtSkill],
 		defenceLevel: allStats.skills[defenceSkill],

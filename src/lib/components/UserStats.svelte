@@ -1,158 +1,68 @@
 <script lang="ts">
 	import userStats from '$lib/userStats';
+
+	const damageTypes: DamageTypes[] = [
+		'crush',
+		'pound',
+		'stab',
+		'slash',
+		'archery',
+		'magic',
+	];
+	const styleNames = ['melee', 'archery', 'magic'];
+	const styleStats: StatNames[] = ['strength', 'accuracy', 'defence'];
+	const skillNames: SkillNames[] = [
+		'attack',
+		'strength',
+		'defence',
+		'health',
+		'archery',
+	];
 </script>
 
 User Stats
-<div class="userStats">
-	<div class="statList">
-		<div class="attackStyleStats">
-			<h2>Melee</h2>
-			<label>
-				Strength
-				<br />
-				<input type="number" bind:value={$userStats.melee.strength} />
-			</label>
-			<label>
-				Accuracy
-				<br />
-				<input type="number" bind:value={$userStats.melee.accuracy} />
-			</label>
-			<label>
-				Defence
-				<br />
-				<input type="number" bind:value={$userStats.melee.defence} />
-			</label>
-		</div>
-		<div class="attackStyleStats">
-			<h2>Archery</h2>
-			<label>
-				Strength
-				<br />
-				<input type="number" bind:value={$userStats.archery.strength} />
-			</label>
-			<label>
-				Accuracy
-				<br />
-				<input type="number" bind:value={$userStats.archery.accuracy} />
-			</label>
-			<label>
-				Defence
-				<br />
-				<input type="number" bind:value={$userStats.archery.defence} />
-			</label>
-		</div>
-		<div class="attackStyleStats">
-			<h2>Magic</h2>
-			<label>
-				Strength
-				<br />
-				<input type="number" bind:value={$userStats.magic.strength} />
-			</label>
-			<label>
-				Accuracy
-				<br />
-				<input type="number" bind:value={$userStats.magic.accuracy} />
-			</label>
-			<label>
-				Defence
-				<br />
-				<input type="number" bind:value={$userStats.magic.defence} />
-			</label>
-		</div>
+<div class="flexRow gap-2">
+	<div class="flexRow gap-2">
+		{#each styleNames as style}
+			<div class="flexCol gap-1">
+				<h2 class="capitalize">{style}</h2>
+				{#each styleStats as stat}
+					<label class="capitalize">
+						{stat}
+						<input type="number" bind:value={$userStats[style][stat]} />
+					</label>
+				{/each}
+			</div>
+		{/each}
 	</div>
 
-	<div class="skillLevels">
+	<div class="flexCol gap-1">
 		<h2>Skill Levels</h2>
-		<label>
-			Attack
-			<br />
-			<input
-				type="number"
-				bind:value={$userStats.skills.attack}
-				max="120"
-				min="1"
-			/>
-		</label>
-		<label>
-			Strength
-			<br />
-			<input
-				type="number"
-				bind:value={$userStats.skills.strength}
-				max="120"
-				min="1"
-			/>
-		</label>
-		<label>
-			Defence
-			<br />
-			<input
-				type="number"
-				bind:value={$userStats.skills.defence}
-				max="120"
-				min="1"
-			/>
-		</label>
-		<label>
-			Health
-			<br />
-			<input
-				type="number"
-				bind:value={$userStats.skills.health}
-				max="120"
-				min="1"
-			/>
-		</label>
-		<label>
-			Archery
-			<br />
-			<input
-				type="number"
-				bind:value={$userStats.skills.archery}
-				max="120"
-				min="1"
-			/>
-		</label>
-		<label>
-			Magic
-			<br />
-			<input
-				type="number"
-				bind:value={$userStats.skills.magic}
-				max="120"
-				min="1"
-			/>
-		</label>
+		{#each skillNames as skill}
+			<label class="capitalize">
+				{skill}
+				<input
+					type="number"
+					min="1"
+					max="120"
+					bind:value={$userStats.skills[skill]}
+				/>
+			</label>
+		{/each}
 	</div>
 </div>
-<div class="attackStyles" role="radiogroup">
-	<label>
-		Melee
-		<br />
-		<input
-			type="radio"
-			value="melee"
-			bind:group={$userStats.selectedAttackStyle}
-		/>
-	</label>
-	<label>
-		Archery
-		<br />
-		<input
-			type="radio"
-			value="archery"
-			bind:group={$userStats.selectedAttackStyle}
-		/>
-	</label>
-	<label>
-		Magic
-		<br />
-		<input
-			type="radio"
-			value="magic"
-			bind:group={$userStats.selectedAttackStyle}
-		/>
-	</label>
+
+<div class="flexRow gap-2" role="radiogroup">
+	{#each damageTypes as type}
+		<label class="capitalize">
+			{type}
+			<input
+				type="radio"
+				value={type}
+				bind:group={$userStats.selectedDamageType}
+			/>
+		</label>
+	{/each}
 </div>
 
 <style>
@@ -160,29 +70,30 @@ User Stats
 		margin: 0;
 		padding: 0;
 	}
-	.attackStyles {
-		display: flex;
-		flex-direction: row;
+
+	label input {
+		display: block;
+	}
+
+	.gap-1 {
 		gap: 0.5em;
 	}
-	.userStats {
-		display: flex;
-		flex-direction: row;
+
+	.gap-2 {
 		gap: 1em;
 	}
-	.statList {
+
+	.flexRow {
 		display: flex;
 		flex-direction: row;
-		gap: 0.5em;
 	}
-	.attackStyleStats {
+
+	.flexCol {
 		display: flex;
 		flex-direction: column;
-		gap: 0.5em;
 	}
-	.skillLevels {
-		display: flex;
-		flex-direction: column;
-		gap: 0.5em;
+
+	.capitalize {
+		text-transform: capitalize;
 	}
 </style>

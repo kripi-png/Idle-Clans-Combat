@@ -1,5 +1,8 @@
 type IndexableObject = Record<string, string | Record>;
+type MeleeStyles = 'crush' | 'pound' | 'stab' | 'slash';
 type AttackStyles = 'melee' | 'archery' | 'magic';
+type DamageTypes = MeleeStyles | 'archery' | 'magic';
+type MeleeDamageTypes = 'crush' | 'pound' | 'stab' | 'slash';
 type SkillNames =
 	| 'attack'
 	| 'strength'
@@ -37,7 +40,7 @@ interface Monster extends IndexableObject {
 }
 
 interface UserStats extends IndexableObject {
-	selectedAttackStyle: AttackStyles;
+	selectedDamageType: DamageTypes;
 	skills: Record<SkillNames, number>;
 	// stats
 	melee: Record<StatNames, number>;
