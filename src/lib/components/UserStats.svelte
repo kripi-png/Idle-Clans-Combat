@@ -17,6 +17,7 @@
 		'defence',
 		'health',
 		'archery',
+		"magic",
 	];
 </script>
 
