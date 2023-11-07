@@ -19,6 +19,7 @@ interface MonsterData extends IndexableObject {
 	attack_interval: number;
 	attack_style: null | string;
 	attack_style_weakness: null | string;
+	respawn_interval?: number;
 	skill_levels: {
 		attack: number;
 		strength: number;
@@ -41,6 +42,7 @@ interface Monster extends IndexableObject {
 
 interface UserStats extends IndexableObject {
 	selectedDamageType: DamageTypes;
+	attackInterval: number;
 	skills: Record<SkillNames, number>;
 	// stats
 	melee: Record<StatNames, number>;

@@ -32,3 +32,13 @@ export const calculateMaxDamagePerHit = (stat: number, level: number) => {
 	const maxHit = (stat / 8 + level + 13 + (stat * level) / 64) / 10;
 	return [Math.trunc(maxHit), maxHit] as const;
 };
+
+export const calculateAverageDamagePerSecond = (
+	maxHit: number,
+	hitChance: number,
+	interval: number,
+): number => {
+	const averageHit = (maxHit / 2) * hitChance;
+	const averageDPS = (averageHit / interval) * 1000;
+	return averageDPS;
+};

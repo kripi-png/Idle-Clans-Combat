@@ -78,13 +78,19 @@
 		{
 			title: 'Monster avg. hit',
 			field: 'monsterAverageHit',
-			mutator: (value) => addHealthIcon(value.toFixed(1)),
+			mutator: (value) => addHealthIcon(value?.toFixed(1)),
 			sorter: 'number',
 		},
 		{
 			title: 'Player avg. hit',
 			field: 'playerAverageHit',
-			mutator: (value) => addHealthIcon(value.toFixed(1)),
+			mutator: (value) => addHealthIcon(value?.toFixed(1)),
+			sorter: 'number',
+		},
+		{
+			title: 'Player avg. DPS',
+			field: 'playerAverageDamagePerSecond',
+			mutator: (value) => addHealthIcon(value?.toFixed(1)),
 			sorter: 'number',
 		},
 	];

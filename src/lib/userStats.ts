@@ -4,6 +4,7 @@ import { calculateAugmentedStat } from './functions';
 
 const DEFAULT_STATS: UserStats = {
 	selectedDamageType: 'crush',
+	attackInterval: 1000,
 	skills: {
 		attack: 1,
 		strength: 1,
@@ -55,6 +56,7 @@ export default userStats;
 type MinifiedUserStats = {
 	type: AttackStyles;
 	damageType: DamageTypes;
+	attackInterval: number;
 	isMelee: boolean;
 	attackLevel: number;
 	strengthLevel: number;
@@ -74,9 +76,12 @@ export const getStatsForSelectedAttackStyle = (
 	const strenghtSkill = isMelee ? 'strength' : (type as SkillNames); // strength / archery / magic
 	const defenceSkill = 'defence' as SkillNames;
 
+	const attackInterval = allStats.attackInterval;
+
 	return {
 		type,
 		damageType,
+		attackInterval,
 		isMelee,
 		attackLevel: allStats.skills[attackSkill],
 		strengthLevel: allStats.skills[strenghtSkill],

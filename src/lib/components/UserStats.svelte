@@ -17,7 +17,7 @@
 		'defence',
 		'health',
 		'archery',
-		"magic",
+		'magic',
 	];
 </script>
 
@@ -64,6 +64,12 @@ User Stats
 			/>
 		</label>
 	{/each}
+</div>
+<div>
+	<label>
+		Attack Speed in ms
+		<input type="number" bind:value={$userStats.attackInterval} />
+	</label>
 </div>
 
 <style>

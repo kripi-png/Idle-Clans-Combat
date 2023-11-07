@@ -6,6 +6,7 @@
 		calculateHitChance,
 		calculateMaxDamagePerHit,
 		calculateAugmentedStat,
+		calculateAverageDamagePerSecond,
 	} from '$lib/functions';
 	import userStats, { getStatsForSelectedAttackStyle } from '$lib/userStats';
 
@@ -63,6 +64,13 @@
 			monster.combat_stats[monsterAttackStyle].strength,
 			monster.skill_levels[monsterStrengthSkill],
 		);
+
+		const playerAverageDamagePerSecond = calculateAverageDamagePerSecond(
+			playerMaxHit,
+			playerHitPercent,
+			playerStats.attackInterval,
+		);
+
 		// Monster
 		return {
 			id: index,
@@ -76,6 +84,7 @@
 			monsterMaxHit,
 			playerAverageHit: (playerMaxHit / 2) * playerHitPercent,
 			monsterAverageHit: (monsterMaxHit / 2) * monsterHitPercent,
+			playerAverageDamagePerSecond,
 		};
 	};
 
