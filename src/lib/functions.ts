@@ -42,3 +42,16 @@ export const calculateAverageDamagePerSecond = (
 	const averageDPS = (averageHit / interval) * 1000;
 	return averageDPS;
 };
+
+export const applyDamageBonusFromEquipment = (
+	playerBaseMaxHit: number,
+	playerStats: MinifiedUserStats,
+	monster: MonsterData,
+): number => {
+	const isUsingCorrectStyle =
+		playerStats.damageType === monster.attack_style_weakness;
+	const bonusFromEnemyWeakness = isUsingCorrectStyle ? 0.2 : 0;
+
+	const playerMaxHit = playerBaseMaxHit * (1 + bonusFromEnemyWeakness);
+	return Math.trunc(playerMaxHit);
+};

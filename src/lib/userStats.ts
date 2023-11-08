@@ -53,19 +53,6 @@ userStats.subscribe((storeValue) => {
 
 export default userStats;
 
-type MinifiedUserStats = {
-	type: AttackStyles;
-	damageType: DamageTypes;
-	attackInterval: number;
-	isMelee: boolean;
-	attackLevel: number;
-	strengthLevel: number;
-	defenceLevel: number;
-	accuracy: number;
-	strength: number;
-	defence: number;
-};
-
 export const getStatsForSelectedAttackStyle = (
 	allStats: UserStats,
 ): MinifiedUserStats => {

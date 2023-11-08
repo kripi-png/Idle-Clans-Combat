@@ -7,12 +7,13 @@
 		calculateMaxDamagePerHit,
 		calculateAugmentedStat,
 		calculateAverageDamagePerSecond,
+		applyDamageBonusFromEquipment,
 	} from '$lib/functions';
 	import userStats, { getStatsForSelectedAttackStyle } from '$lib/userStats';
 
 	export let columns: ColumnDefinition[];
 	export let data: MonsterData[];
-	export let playerMaxHit: number;
+	export let playerBaseMaxHit: number;
 
 	// some of player's stats can be calculated without information on specific monster's stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
@@ -66,9 +67,15 @@
 		);
 
 		const playerAverageDamagePerSecond = calculateAverageDamagePerSecond(
-			playerMaxHit,
+			playerBaseMaxHit,
 			playerHitPercent,
 			playerStats.attackInterval,
+		);
+
+		const playerMaxHit = applyDamageBonusFromEquipment(
+			playerBaseMaxHit,
+			playerStats,
+			monster,
 		);
 
 		// Monster

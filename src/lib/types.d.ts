@@ -50,6 +50,19 @@ interface UserStats extends IndexableObject {
 	magic: Record<StatNames, number>;
 }
 
+type MinifiedUserStats = {
+	type: AttackStyles;
+	damageType: DamageTypes;
+	attackInterval: number;
+	isMelee: boolean;
+	attackLevel: number;
+	strengthLevel: number;
+	defenceLevel: number;
+	accuracy: number;
+	strength: number;
+	defence: number;
+};
+
 interface PlayerEquipmentItem extends IndexableObject {
 	name: string;
 	slot:

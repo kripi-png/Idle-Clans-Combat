@@ -12,7 +12,7 @@
 
 	// get attack style specific stats
 	$: playerStats = getStatsForSelectedAttackStyle($userStats);
-	$: [playerMaxHit, playerMaxHit_exact] = calculateMaxDamagePerHit(
+	$: [playerBaseMaxHit, playerBaseMaxHit_exact] = calculateMaxDamagePerHit(
 		playerStats.strength,
 		playerStats.strengthLevel,
 	);
@@ -104,10 +104,10 @@
 		(as of yet), consider them something of approximation.
 	</p>
 	<h3>
-		Player max hit: {addHealthIcon(playerMaxHit)}
-		(exact value: {playerMaxHit_exact?.toFixed(2)})
+		Player max hit: {addHealthIcon(playerBaseMaxHit)}
+		(exact value: {playerBaseMaxHit_exact?.toFixed(2)})
 	</h3>
-	<MonsterTable data={monsterData.monsters} {columns} {playerMaxHit} />
+	<MonsterTable data={monsterData.monsters} {columns} {playerBaseMaxHit} />
 </div>
 
 <style>
