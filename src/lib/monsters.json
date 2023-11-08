@@ -126,7 +126,7 @@
 			"health": 18,
 			"attack_interval": 3750,
 			"attack_style": null,
-			"attack_style_weakness": "archery",
+			"attack_style_weakness": "crush",
 			"skill_levels": {
 				"attack": 16,
 				"strength": 19,
@@ -166,7 +166,7 @@
 			"health": 22,
 			"attack_interval": 3000,
 			"attack_style": null,
-			"attack_style_weakness": "stab",
+			"attack_style_weakness": "magic",
 			"skill_levels": {
 				"attack": 11,
 				"strength": 13,
@@ -286,7 +286,7 @@
 			"health": 38,
 			"attack_interval": 3000,
 			"attack_style": null,
-			"attack_style_weakness": "crush",
+			"attack_style_weakness": "pound",
 			"skill_levels": {
 				"attack": 36,
 				"strength": 36,
@@ -306,7 +306,7 @@
 			"health": 40,
 			"attack_interval": 3000,
 			"attack_style": null,
-			"attack_style_weakness": "magic",
+			"attack_style_weakness": "stab",
 			"skill_levels": {
 				"attack": 40,
 				"strength": 41,
