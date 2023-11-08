@@ -103,10 +103,6 @@
 		NOTE: Do not blindly trust these values. They are probably not 100% accurate
 		(as of yet), consider them something of approximation.
 	</p>
-	<!-- <p class="note">
-		Green name indicates <b>two</b>-hit-kill (or better)
-		on avg. Red name means possibility to get one-hit by the monster.
-	</p> -->
 	<h3>
 		Player max hit: {addHealthIcon(playerMaxHit)}
 		(exact value: {playerMaxHit_exact?.toFixed(2)})
