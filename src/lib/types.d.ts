@@ -49,3 +49,29 @@ interface UserStats extends IndexableObject {
 	archery: Record<StatNames, number>;
 	magic: Record<StatNames, number>;
 }
+
+interface PlayerEquipmentItem extends IndexableObject {
+	name: string;
+	slot:
+		| 'weapon'
+		| 'helmet'
+		| 'body'
+		| 'legs'
+		| 'gloves'
+		| 'boots'
+		| 'cape'
+		| 'ring'
+		| 'bracelet'
+		| 'earrings'
+		| 'amulet'
+		| 'offhand'
+		| 'consumable';
+	requiredSkill: string;
+	requiredSkillLevel: number;
+	// stats
+	attackInterval: null | number;
+	melee: Record<StatNames, number>;
+	archery: Record<StatNames, number>;
+	magic: Record<StatNames, number>;
+	specialEffect: null | number;
+}
