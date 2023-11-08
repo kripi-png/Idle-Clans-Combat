@@ -67,7 +67,7 @@ User Stats
 </div>
 <div>
 	<label>
-		Attack Speed in ms
+		Weapon's base attack speed in ms
 		<input type="number" bind:value={$userStats.attackInterval} />
 	</label>
 </div>
