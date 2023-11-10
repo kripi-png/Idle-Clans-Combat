@@ -62,7 +62,7 @@ export const calculateBonusesFromPotions = (
 		playerStats.damageType === 'archery' &&
 		activePotions.includes('POT_OF_GREAT_SIGHT')
 	) {
-		return { damage: 0.2, accuracy: 0 };
+		return { damage: 0.1, accuracy: 0.1 };
 	} else if (
 		playerStats.damageType === 'magic' &&
 		activePotions.includes('POT_OF_DARK_MAGIC')
