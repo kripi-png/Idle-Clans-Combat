@@ -71,6 +71,7 @@
 			playerBaseMaxHit,
 			playerHitPercent,
 			playerStats.attackInterval,
+			playerStats,
 		);
 
 		const playerMaxHit = applyDamageBonusFromEquipment(

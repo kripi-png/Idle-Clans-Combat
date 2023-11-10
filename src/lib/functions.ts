@@ -47,7 +47,12 @@ export const calculateAverageDamagePerSecond = (
 	maxHit: number,
 	hitChance: number,
 	interval: number,
+	playerStats?: MinifiedUserStats,
 ): number => {
+	if (playerStats && playerStats.potions.includes('POT_OF_SWIFTNESS')) {
+		// 10% bonus if player is using swiftness
+		interval = interval * 0.9;
+	}
 	const averageHit = (maxHit / 2) * hitChance;
 	const averageDPS = (averageHit / interval) * 1000;
 	return averageDPS;
