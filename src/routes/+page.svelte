@@ -3,7 +3,7 @@
 	import {
 		calculateAugmentedStat,
 		calculateMaxDamagePerHit,
-		calculateDamageBonusFromPotions,
+		calculateBonusesFromPotions,
 	} from '$lib/functions';
 	import MonsterTable from '$lib/components/MonsterTable.svelte';
 	import UserStats from '$lib/components/UserStats.svelte';
@@ -19,7 +19,7 @@
 	);
 	// calculate general max hit with bonuses other than that from correct attack style
 	$: playerGeneralMaxHit =
-		playerBaseMaxHit * (1 + calculateDamageBonusFromPotions(playerStats));
+		playerBaseMaxHit * (1 + calculateBonusesFromPotions(playerStats).damage);
 
 	const percentageize = (value: number): string => {
 		// convert decimal to string with %-character
