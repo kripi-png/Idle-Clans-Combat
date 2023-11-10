@@ -48,6 +48,7 @@ interface UserStats extends IndexableObject {
 	melee: Record<StatNames, number>;
 	archery: Record<StatNames, number>;
 	magic: Record<StatNames, number>;
+	potions: string[];
 }
 
 type MinifiedUserStats = {
@@ -61,6 +62,7 @@ type MinifiedUserStats = {
 	accuracy: number;
 	strength: number;
 	defence: number;
+	potions: string[];
 };
 
 interface PlayerEquipmentItem extends IndexableObject {

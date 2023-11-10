@@ -42,6 +42,28 @@ export const calculateAverageDamagePerSecond = (
 	return averageDPS;
 };
 
+export const calculateDamageBonusFromPotions = (
+	playerStats: MinifiedUserStats,
+): number => {
+	const { isMelee, potions: activePotions } = playerStats;
+	if (isMelee && activePotions.includes('POT_OF_PURE_POWER')) {
+		return 0.2;
+	} else if (
+		playerStats.damageType === 'archery' &&
+		activePotions.includes('POT_OF_GREAT_SIGHT')
+	) {
+		return 0.2;
+	} else if (
+		playerStats.damageType === 'magic' &&
+		activePotions.includes('POT_OF_DARK_MAGIC')
+	) {
+		console.error('Potion of Dark Magic is not implemented yet.');
+		return 0;
+	}
+
+	return 0;
+};
+
 export const applyDamageBonusFromEquipment = (
 	playerBaseMaxHit: number,
 	playerStats: MinifiedUserStats,
@@ -50,7 +72,7 @@ export const applyDamageBonusFromEquipment = (
 	const isUsingCorrectStyle =
 		playerStats.damageType === monster.attack_style_weakness;
 	const bonusFromEnemyWeakness = isUsingCorrectStyle ? 0.2 : 0;
+	const bonusFromPotions = calculateDamageBonusFromPotions(playerStats);
 
-	const playerMaxHit = playerBaseMaxHit * (1 + bonusFromEnemyWeakness);
-	return Math.trunc(playerMaxHit);
+	return playerBaseMaxHit * (1 + bonusFromEnemyWeakness + bonusFromPotions);
 };

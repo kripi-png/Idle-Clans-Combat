@@ -19,6 +19,15 @@
 		'archery',
 		'magic',
 	];
+
+	const potions = [
+		'POT_OF_PURE_POWER',
+		'POT_OF_SWIFTNESS',
+		'POT_OF_RESURRECTION',
+		'POT_OF_GREAT_SIGHT',
+		'POT_OF_DARK_MAGIC',
+		'POTION_OF_ANCIENT_KNOWLEDGE',
+	];
 </script>
 
 User Stats
@@ -48,6 +57,16 @@ User Stats
 					max="120"
 					bind:value={$userStats.skills[skill]}
 				/>
+			</label>
+		{/each}
+	</div>
+
+	<div class="flexCol gap-1">
+		<h2>Potions</h2>
+		{#each potions as potion}
+			<label class="capitalize">
+				{potion.split('_').join(' ').toLowerCase()}
+				<input value={potion} type="checkbox" bind:group={$userStats.potions} />
 			</label>
 		{/each}
 	</div>
