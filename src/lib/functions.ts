@@ -1,5 +1,6 @@
 // stat is accuracy or defence value; level is the actual level
 // e.g. player can have level 90 attack and 100 melee accuracy
+// result is also always truncated
 export const calculateAugmentedStat = (stat: number, level: number) => {
 	return Math.trunc(((stat + 64) * (level + 8)) / 10);
 };
@@ -8,6 +9,7 @@ export const calculateHitChance = (
 	attackerAccuracy: number,
 	defenderDefence: number,
 	applyBoostFromAttackStyle: boolean,
+	playerStats?: MinifiedUserStats,
 ): number => {
 	if (applyBoostFromAttackStyle) {
 		// lower defence by 20% if attacker is using attack style the defender is weak to
@@ -20,6 +22,14 @@ export const calculateHitChance = (
 		attackerAccuracy < defenderDefence
 			? (attackerAccuracy - 1) / (2 * defenderDefence)
 			: 1 - (defenderDefence + 1) / (2 * attackerAccuracy);
+
+	// apply bonuses
+	if (playerStats) {
+		const accuracyBonusFromPotions = calculateBonusesFromPotions(playerStats).accuracy;
+		hitChance = hitChance * (1 + accuracyBonusFromPotions);
+	}
+	// cap out at 100%
+	if (hitChance >= 1) return 1;
 	return hitChance;
 };
 
