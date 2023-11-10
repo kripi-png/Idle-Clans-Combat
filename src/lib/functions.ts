@@ -25,7 +25,8 @@ export const calculateHitChance = (
 
 	// apply bonuses
 	if (playerStats) {
-		const accuracyBonusFromPotions = calculateBonusesFromPotions(playerStats).accuracy;
+		const accuracyBonusFromPotions =
+			calculateBonusesFromPotions(playerStats).accuracy;
 		hitChance = hitChance * (1 + accuracyBonusFromPotions);
 	}
 	// cap out at 100%
@@ -54,7 +55,7 @@ export const calculateAverageDamagePerSecond = (
 
 export const calculateBonusesFromPotions = (
 	playerStats: MinifiedUserStats,
-): number => {
+): Record<string, number> => {
 	const { isMelee, potions: activePotions } = playerStats;
 	if (isMelee && activePotions.includes('POT_OF_PURE_POWER')) {
 		return { damage: 0.2, accuracy: 0.2 };
