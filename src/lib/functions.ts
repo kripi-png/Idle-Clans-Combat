@@ -92,3 +92,25 @@ export const applyDamageBonusFromEquipment = (
 
 	return playerBaseMaxHit * (1 + bonusFromEnemyWeakness + bonusFromPotions);
 };
+
+export const calculateKillsPerHour = (
+	averageDPS: number,
+	activePotions: string[],
+	monster: MonsterData,
+	includeRespawnTime: boolean = true,
+): number => {
+	const isUsingResurrectionPotion = activePotions.includes(
+		'POT_OF_RESURRECTION',
+	);
+
+	let respawnTime = monster.respawn_interval || 1500;
+	// reduce timer by 40%
+	if (isUsingResurrectionPotion) respawnTime = respawnTime * 0.6;
+
+	let secondsPerKill = monster.health / averageDPS;
+	if (includeRespawnTime) {
+		secondsPerKill = secondsPerKill + respawnTime / 1000;
+	}
+	// return kills per hour
+	return (60 / secondsPerKill) * 60;
+};

@@ -22,7 +22,7 @@
 
 	const potions = [
 		'POT_OF_SWIFTNESS',
-		// 'POT_OF_RESURRECTION',
+		'POT_OF_RESURRECTION',
 		'POT_OF_PURE_POWER',
 		'POT_OF_GREAT_SIGHT',
 		// 'POT_OF_DARK_MAGIC',

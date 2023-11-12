@@ -97,6 +97,12 @@
 			mutator: (value) => addHealthIcon(value?.toFixed(1)),
 			sorter: 'number',
 		},
+		{
+			title: 'Avg. kills per hour',
+			field: 'averageKillsPerHour',
+			mutator: (value) => value?.toFixed(1),
+			sorter: 'number',
+		},
 	];
 </script>
 

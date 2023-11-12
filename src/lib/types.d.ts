@@ -19,7 +19,7 @@ interface MonsterData extends IndexableObject {
 	attack_interval: number;
 	attack_style: null | string;
 	attack_style_weakness: null | string;
-	respawn_interval?: number;
+	respawn_interval: number;
 	skill_levels: {
 		attack: number;
 		strength: number;
@@ -28,16 +28,6 @@ interface MonsterData extends IndexableObject {
 		archery: number;
 	};
 	combat_stats: Record<AttackStyles, Record<StatNames, number>>;
-}
-
-interface Monster extends IndexableObject {
-	id: number;
-	name: string;
-	combatLevel: number | null;
-	health: number;
-	playerHitPercent: number;
-	monsterHitPercent: number;
-	monsterMaxHit: number;
 }
 
 interface UserStats extends IndexableObject {
