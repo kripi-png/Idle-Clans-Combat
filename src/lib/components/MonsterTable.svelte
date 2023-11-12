@@ -8,6 +8,7 @@
 		calculateAugmentedStat,
 		calculateAverageDamagePerSecond,
 		applyDamageBonusFromEquipment,
+		calculateKillsPerHour,
 	} from '$lib/functions';
 	import userStats, { getStatsForSelectedAttackStyle } from '$lib/userStats';
 
@@ -22,10 +23,7 @@
 		playerStats.attackLevel,
 	);
 
-	const calculateMonsterEntry = (
-		monster: MonsterData,
-		index: number,
-	): Monster => {
+	const calculateMonsterEntry = (monster: MonsterData, index: number) => {
 		// default to melee
 		const monsterAttackStyle = (monster.attack_style ??
 			'melee') as AttackStyles;
@@ -54,6 +52,7 @@
 			playerAccuracyAugmented,
 			monsterDefenceAugmented,
 			playerStats.damageType === monster.attack_style_weakness,
+			playerStats,
 		);
 		// monsters do not gain the buff from correct style
 		const monsterHitPercent = calculateHitChance(
@@ -61,7 +60,7 @@
 			playerDefenceAugmented,
 			false,
 		);
-		const [monsterMaxHit, _] = calculateMaxDamagePerHit(
+		const monsterMaxHit = calculateMaxDamagePerHit(
 			monster.combat_stats[monsterAttackStyle].strength,
 			monster.skill_levels[monsterStrengthSkill],
 		);
@@ -70,11 +69,18 @@
 			playerBaseMaxHit,
 			playerHitPercent,
 			playerStats.attackInterval,
+			playerStats,
 		);
 
 		const playerMaxHit = applyDamageBonusFromEquipment(
 			playerBaseMaxHit,
 			playerStats,
+			monster,
+		);
+
+		const averageKillsPerHour = calculateKillsPerHour(
+			playerAverageDamagePerSecond,
+			playerStats.potions,
 			monster,
 		);
 
@@ -92,13 +98,14 @@
 			playerAverageHit: (playerMaxHit / 2) * playerHitPercent,
 			monsterAverageHit: (monsterMaxHit / 2) * monsterHitPercent,
 			playerAverageDamagePerSecond,
+			averageKillsPerHour,
 		};
 	};
 
 	// Tabulator watches for events such as .splice on the data array
 	// so empty the list and set new data using the method
 	// if (playerStats) is used to make the process reactive to that value also
-	let monsterData: Monster[] = [];
+	let monsterData: Record<string, any>[] = [];
 	$: if (playerStats)
 		monsterData.splice(
 			0,

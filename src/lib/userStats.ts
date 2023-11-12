@@ -29,6 +29,7 @@ const DEFAULT_STATS: UserStats = {
 		accuracy: 0,
 		defence: 0,
 	},
+	potions: [],
 };
 
 let initialValue = DEFAULT_STATS;
@@ -64,6 +65,7 @@ export const getStatsForSelectedAttackStyle = (
 	const defenceSkill = 'defence' as SkillNames;
 
 	const attackInterval = allStats.attackInterval;
+	const potions = allStats.potions;
 
 	return {
 		type,
@@ -76,5 +78,6 @@ export const getStatsForSelectedAttackStyle = (
 		accuracy: allStats[type].accuracy,
 		strength: allStats[type].strength,
 		defence: allStats[type].defence,
+		potions,
 	};
 };
