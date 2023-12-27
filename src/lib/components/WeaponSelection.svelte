@@ -54,9 +54,3 @@
 	<li>Damage type: {$userStats.selectedDamageType}</li>
 	<li>Attack interval: {$userStats.attackInterval}</li>
 </ul>
-<div>
-	<label>
-		Weapon's base attack speed in ms
-		<input disabled type="number" bind:value={$userStats.attackInterval} />
-	</label>
-</div>
