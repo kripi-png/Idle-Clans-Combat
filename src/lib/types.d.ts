@@ -80,3 +80,41 @@ interface PlayerEquipmentItem extends IndexableObject {
 	magic: Record<StatNames, number>;
 	specialEffect: null | number;
 }
+
+type WeaponType =
+	| 'scimitar'
+	| 'battle_axe'
+	| 'longsword'
+	| 'club'
+	| 'spear'
+	| 'heavy_hammer'
+	| 'bow'
+	| 'crossbow'
+	| 'staff'
+	| 'wand';
+
+interface DefaultStats {
+	type: WeaponType;
+	one_handed: boolean;
+	attack_interval: number;
+	attack_style: WeaponStyle;
+	melee_strength: number;
+	melee_accuracy: number;
+	archery_accuracy?: number;
+	archery_strength?: number;
+	magic_strength?: number;
+	magic_accuracy?: number;
+	magic_defence?: number;
+}
+
+interface WeaponVariation extends DefaultStats {
+	name: string;
+	attack_requirements: number;
+}
+
+interface WeaponObject {
+	default: DefaultStats;
+	[key: string]: WeaponVariation;
+}
+
+type Weapons = Record<WeaponType, WeaponObject>;

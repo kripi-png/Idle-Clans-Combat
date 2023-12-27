@@ -1,14 +1,7 @@
 <script lang="ts">
 	import userStats from '$lib/userStats';
+	import WeaponSelection from './WeaponSelection.svelte';
 
-	const damageTypes: DamageTypes[] = [
-		'crush',
-		'pound',
-		'stab',
-		'slash',
-		'archery',
-		'magic',
-	];
 	const styleNames = ['melee', 'archery', 'magic'];
 	const styleStats: StatNames[] = ['strength', 'accuracy', 'defence'];
 	const skillNames: SkillNames[] = [
@@ -72,24 +65,7 @@ User Stats
 	</div>
 </div>
 
-<div class="flexRow gap-2" role="radiogroup">
-	{#each damageTypes as type}
-		<label class="capitalize">
-			{type}
-			<input
-				type="radio"
-				value={type}
-				bind:group={$userStats.selectedDamageType}
-			/>
-		</label>
-	{/each}
-</div>
-<div>
-	<label>
-		Weapon's base attack speed in ms
-		<input type="number" bind:value={$userStats.attackInterval} />
-	</label>
-</div>
+<WeaponSelection />
 
 <style>
 	h2 {

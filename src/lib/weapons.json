@@ -1,0 +1,544 @@
+{
+	"scimitar": {
+		"default": {
+			"type": "scimitar",
+			"one_handed": true,
+			"attack_interval": 2750,
+			"attack_style": "slash",
+			"melee_strength": 0,
+			"melee_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal scimitar",
+			"attack_requirements": 0,
+			"melee_strength": 5,
+			"melee_accuracy": 6
+		},
+		"refined": {
+			"name": "Refined scimitar",
+			"attack_requirements": 10,
+			"melee_strength": 12,
+			"melee_accuracy": 13
+		},
+		"great": {
+			"name": "Great scimitar",
+			"attack_requirements": 25,
+			"melee_strength": 19,
+			"melee_accuracy": 18
+		},
+		"elite": {
+			"name": "Elite scimitar",
+			"attack_requirements": 40,
+			"melee_strength": 34,
+			"melee_accuracy": 35
+		},
+		"superior": {
+			"name": "Superior scimitar",
+			"attack_requirements": 55,
+			"melee_strength": 49,
+			"melee_accuracy": 51
+		},
+		"outstanding": {
+			"name": "Outstanding scimitar",
+			"attack_requirements": 70,
+			"melee_strength": 63,
+			"melee_accuracy": 65
+		},
+		"astaroths": {
+			"name": "Astaroths scimitar",
+			"attack_requirements": 75,
+			"melee_strength": 71,
+			"melee_accuracy": 74
+		},
+		"godlike": {
+			"name": "Godlike scimitar",
+			"attack_requirements": 80,
+			"melee_strength": 75,
+			"melee_accuracy": 78
+		},
+		"viperstrike": {
+			"name": "Viperstrike scimitar",
+			"attack_requirements": 80,
+			"melee_strength": 67,
+			"melee_accuracy": 69
+		}
+	},
+	"battle_axe": {
+		"default": {
+			"type": "battle_axe",
+			"one_handed": true,
+			"attack_interval": 3600,
+			"attack_style": "crush",
+			"melee_strength": 0,
+			"melee_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal battle-axe",
+			"attack_requirements": 0,
+			"melee_strength": 5,
+			"melee_accuracy": 6
+		},
+		"refined": {
+			"name": "Refined battleaxe",
+			"attack_requirements": 10,
+			"melee_strength": 37,
+			"melee_accuracy": 25
+		},
+		"great": {
+			"name": "Great battleaxe",
+			"attack_requirements": 25,
+			"melee_strength": 41,
+			"melee_accuracy": 31
+		},
+		"elite": {
+			"name": "Elite battleaxe",
+			"attack_requirements": 40,
+			"melee_strength": 72,
+			"melee_accuracy": 46
+		},
+		"superior": {
+			"name": "Superior battleaxe",
+			"attack_requirements": 55,
+			"melee_strength": 89,
+			"melee_accuracy": 65
+		},
+		"outstanding": {
+			"name": "Outstanding battleaxe",
+			"attack_requirements": 70,
+			"melee_strength": 105,
+			"melee_accuracy": 85
+		},
+		"godlike": {
+			"name": "Godlike battleaxe",
+			"attack_requirements": 80,
+			"melee_strength": 125,
+			"melee_accuracy": 96
+		},
+		"eagleclaw": {
+			"name": "Eagleclaw battleaxe",
+			"attack_requirements": 80,
+			"melee_strength": 118,
+			"melee_accuracy": 94
+		}
+	},
+	"longsword": {
+		"default": {
+			"type": "longsword",
+			"one_handed": true,
+			"attack_interval": 3500,
+			"attack_style": "stab",
+			"melee_strength": 0,
+			"melee_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal longsword",
+			"attack_requirements": 0,
+			"melee_strength": 10,
+			"melee_accuracy": 8
+		},
+		"refined": {
+			"name": "Refined longsword",
+			"attack_requirements": 10,
+			"melee_strength": 22,
+			"melee_accuracy": 20
+		},
+		"great": {
+			"name": "Great longsword",
+			"attack_requirements": 25,
+			"melee_strength": 31,
+			"melee_accuracy": 29
+		},
+		"elite": {
+			"name": "Elite longsword",
+			"attack_requirements": 40,
+			"melee_strength": 49,
+			"melee_accuracy": 47
+		},
+		"superior": {
+			"name": "Superior longsword",
+			"attack_requirements": 55,
+			"melee_strength": 67,
+			"melee_accuracy": 66
+		},
+		"outstanding": {
+			"name": "Outstanding longsword",
+			"attack_requirements": 70,
+			"melee_strength": 86,
+			"melee_accuracy": 82
+		},
+		"godlike": {
+			"name": "Godlike longsword",
+			"attack_requirements": 80,
+			"melee_strength": 96,
+			"melee_accuracy": 99
+		},
+		"stygian": {
+			"name": "Stygian longsword",
+			"attack_requirements": 80,
+			"melee_strength": 89,
+			"melee_accuracy": 92
+		}
+	},
+	"club": {
+		"default": {
+			"type": "club",
+			"one_handed": true,
+			"attack_interval": 3000,
+			"attack_style": "pound",
+			"melee_strength": 0,
+			"melee_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal club",
+			"attack_requirements": 0,
+			"melee_strength": 8,
+			"melee_accuracy": 5
+		},
+		"refined": {
+			"name": "Refined club",
+			"attack_requirements": 10,
+			"melee_strength": 15,
+			"melee_accuracy": 14
+		},
+		"great": {
+			"name": "Great club",
+			"attack_requirements": 25,
+			"melee_strength": 23,
+			"melee_accuracy": 22
+		},
+		"elite": {
+			"name": "Elite club",
+			"attack_requirements": 40,
+			"melee_strength": 40,
+			"melee_accuracy": 41
+		},
+		"superior": {
+			"name": "Superior club",
+			"attack_requirements": 55,
+			"melee_strength": 55,
+			"melee_accuracy": 54
+		},
+		"outstanding": {
+			"name": "Outstanding club",
+			"attack_requirements": 70,
+			"melee_strength": 72,
+			"melee_accuracy": 71
+		},
+		"godlike": {
+			"name": "Godlike club",
+			"attack_requirements": 80,
+			"melee_strength": 86,
+			"melee_accuracy": 82
+		},
+		"infernal": {
+			"name": "Infernal club",
+			"attack_requirements": 80,
+			"melee_strength": 76,
+			"melee_accuracy": 72
+		}
+	},
+	"spear": {
+		"default": {
+			"type": "spear",
+			"one_handed": false,
+			"attack_interval": 3800,
+			"attack_style": "stab",
+			"melee_strength": 0,
+			"melee_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal spear",
+			"attack_requirements": 0,
+			"melee_strength": 18,
+			"melee_accuracy": 12
+		},
+		"refined": {
+			"name": "Refined spear",
+			"attack_requirements": 10,
+			"melee_strength": 25,
+			"melee_accuracy": 38
+		},
+		"great": {
+			"name": "Great spear",
+			"attack_requirements": 25,
+			"melee_strength": 39,
+			"melee_accuracy": 52
+		},
+		"elite": {
+			"name": "Elite spear",
+			"attack_requirements": 40,
+			"melee_strength": 58,
+			"melee_accuracy": 68
+		},
+		"superior": {
+			"name": "Superior spear",
+			"attack_requirements": 55,
+			"melee_strength": 81,
+			"melee_accuracy": 96
+		},
+		"outstanding": {
+			"name": "Outstanding spear",
+			"attack_requirements": 70,
+			"melee_strength": 99,
+			"melee_accuracy": 122
+		},
+		"godlike": {
+			"name": "Godlike spear",
+			"attack_requirements": 80,
+			"melee_strength": 117,
+			"melee_accuracy": 155
+		}
+	},
+	"heavy_hammer": {
+		"default": {
+			"type": "heavy_hammer",
+			"one_handed": false,
+			"attack_interval": 3600,
+			"attack_style": "pound",
+			"melee_strength": 0,
+			"melee_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal heavy hammer",
+			"attack_requirements": 0,
+			"melee_strength": 14,
+			"melee_accuracy": 13
+		},
+		"refined": {
+			"name": "Refined heavy hammer",
+			"attack_requirements": 10,
+			"melee_strength": 36,
+			"melee_accuracy": 36
+		},
+		"great": {
+			"name": "Great heavy hammer",
+			"attack_requirements": 25,
+			"melee_strength": 52,
+			"melee_accuracy": 47
+		},
+		"elite": {
+			"name": "Elite heavy hammer",
+			"attack_requirements": 40,
+			"melee_strength": 68,
+			"melee_accuracy": 65
+		},
+		"superior": {
+			"name": "Superior heavy hammer",
+			"attack_requirements": 55,
+			"melee_strength": 89,
+			"melee_accuracy": 95
+		},
+		"outstanding": {
+			"name": "Outstanding heavy hammer",
+			"attack_requirements": 70,
+			"melee_strength": 110,
+			"melee_accuracy": 115
+		},
+		"godlike": {
+			"name": "Godlike heavy hammer",
+			"attack_requirements": 80,
+			"melee_strength": 132,
+			"melee_accuracy": 135
+		}
+	},
+	"bow": {
+		"default": {
+			"type": "bow",
+			"one_handed": false,
+			"attack_interval": 2500,
+			"attack_style": "archery",
+			"archery_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal bow",
+			"archery_requirements": 0,
+			"archery_accuracy": 15
+		},
+		"refined": {
+			"name": "Refined bow",
+			"archery_requirements": 10,
+			"archery_accuracy": 20
+		},
+		"great": {
+			"name": "Great bow",
+			"archery_requirements": 25,
+			"archery_accuracy": 31
+		},
+		"elite": {
+			"name": "Elite bow",
+			"archery_requirements": 40,
+			"archery_accuracy": 49
+		},
+		"superior": {
+			"name": "Superior bow",
+			"archery_requirements": 55,
+			"archery_accuracy": 71
+		},
+		"outstanding": {
+			"name": "Outstanding bow",
+			"archery_requirements": 70,
+			"archery_accuracy": 88
+		},
+		"godlike": {
+			"name": "Godlike bow",
+			"archery_requirements": 80,
+			"archery_accuracy": 105
+		},
+		"thunderbolt": {
+			"name": "Thunderbolt bow",
+			"archery_requirements": 80,
+			"archery_accuracy": 91
+		}
+	},
+	"crossbow": {
+		"default": {
+			"type": "crossbow",
+			"one_handed": true,
+			"attack_interval": 3500,
+			"attack_style": "archery",
+			"archery_strength": 0,
+			"archery_accuracy": 0
+		},
+		"normal": {
+			"name": "Normal crossbow",
+			"archery_requirements": 0,
+			"archery_accuracy": 8
+		},
+		"refined": {
+			"name": "Refined crossbow",
+			"archery_requirements": 10,
+			"archery_accuracy": 16
+		},
+		"great": {
+			"name": "Great crossbow",
+			"archery_requirements": 25,
+			"archery_accuracy": 25
+		},
+		"elite": {
+			"name": "Elite crossbow",
+			"archery_requirements": 40,
+			"archery_accuracy": 42
+		},
+		"superior": {
+			"name": "Superior crossbow",
+			"archery_requirements": 55,
+			"archery_accuracy": 59
+		},
+		"outstanding": {
+			"name": "Outstanding crossbow",
+			"archery_requirements": 70,
+			"archery_accuracy": 79
+		},
+		"dragon_slayers": {
+			"name": "Dragon Slayer's crossbow",
+			"archery_requirements": 75,
+			"archery_accuracy": 118
+		},
+		"godlike": {
+			"name": "Godlike crossbow",
+			"archery_requirements": 80,
+			"archery_accuracy": 125
+		}
+	},
+	"staff": {
+		"default": {
+			"type": "staff",
+			"one_handed": false,
+			"attack_interval": 4750,
+			"attack_style": "magic",
+			"magic_strength": 0,
+			"magic_accuracy": 0,
+			"magic_defence": 0
+		},
+		"normal": {
+			"name": "Normal staff",
+			"magic_requirements": 0,
+			"magic_strength": 18,
+			"magic_accuracy": 12,
+			"magic_defence": 3
+		},
+		"refined": {
+			"name": "Refined staff",
+			"magic_requirements": 10,
+			"magic_strength": 39,
+			"magic_accuracy": 26,
+			"magic_defence": 9
+		},
+		"great": {
+			"name": "Great staff",
+			"magic_requirements": 25,
+			"magic_strength": 58,
+			"magic_accuracy": 42,
+			"magic_defence": 18
+		},
+		"elite": {
+			"name": "Elite staff",
+			"magic_requirements": 40,
+			"magic_strength": 76,
+			"magic_accuracy": 63,
+			"magic_defence": 30
+		},
+		"superior": {
+			"name": "Superior staff",
+			"magic_requirements": 55,
+			"magic_strength": 97,
+			"magic_accuracy": 85,
+			"magic_defence": 44
+		},
+		"outstanding": {
+			"name": "Outstanding staff",
+			"magic_requirements": 70,
+			"magic_strength": 115,
+			"magic_accuracy": 101,
+			"magic_defence": 58
+		},
+		"godlike": {
+			"name": "Godlike staff",
+			"magic_requirements": 80,
+			"magic_strength": 152,
+			"magic_accuracy": 132,
+			"magic_defence": 70
+		},
+		"sorcerers": {
+			"name": "Sorcerer's staff",
+			"magic_requirements": 80,
+			"magic_strength": 144,
+			"magic_accuracy": 125,
+			"magic_defence": 62
+		},
+		"divine": {
+			"name": "Divine staff",
+			"magic_requirements": 80,
+			"magic_strength": 132,
+			"magic_accuracy": 115,
+			"magic_defence": 0
+		}
+	},
+	"wand": {
+		"default": {
+			"type": "wand",
+			"one_handed": true,
+			"attack_interval": 0,
+			"attack_style": "magic",
+			"magic_strength": 0,
+			"magic_accuracy": 0,
+			"magic_defence": 0
+		},
+		"novices": {
+			"name": "Novice's wand",
+			"attack_interval": 4250,
+			"magic_requirements": 25,
+			"magic_strength": 22,
+			"magic_accuracy": 28,
+			"magic_defence": 18
+		},
+		"lifesteal": {
+			"name": "Wand of lifesteal",
+			"attack_interval": 4400,
+			"magic_requirements": 65,
+			"magic_strength": 85,
+			"magic_accuracy": 70,
+			"magic_defence": 45
+		}
+	}
+}
